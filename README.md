@@ -1,4 +1,4 @@
-# GoodNotes Data Engineering Take-Home Assignment
+# Quillpad Active Users (MAU) Modelling
 
 ## Completed by: Nam Nguyen
 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This repository contains the complete solution for the GoodNotes Data Engineering Take-Home Assignment. The solution consists of two parts:
+This repository contains the complete solution for the Quillpad Active Users (MAU) modelling project. The solution consists of two parts:
 
 1. **Part 1**: Data extraction and modeling (Active/Inactive user definitions)
 2. **Part 2**: Semantic layer for MAU analysis with business insights
@@ -16,7 +16,7 @@ This repository contains the complete solution for the GoodNotes Data Engineerin
 ## Repository Structure
 
 ```
-goodnotes_takehome/
+quillpad_active_users/
 ├── models/
 │   ├── # Part 1: Foundational Models
 │   ├── stg_user_activities.sql           # Staging: deduplication

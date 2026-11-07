@@ -1,4 +1,4 @@
-goodnotes_takehome:
+quillpad_active_users:
   target: dev
   outputs:
     dev:

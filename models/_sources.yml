@@ -4,7 +4,7 @@ sources:
     schema: james_nguyen
     tables:
       - name: user_activities
-        description: raw activities users performed in Goodnotes
+        description: raw activities users performed in Quillpad
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:
