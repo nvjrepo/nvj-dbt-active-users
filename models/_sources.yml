@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: source
+    schema: james_nguyen
+    tables:
+      - name: user_activities
+        description: raw activities users performed in Goodnotes
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns:
+                - user_id
+                - event_date
+                - event_name
+              config:
+                severity: warn
+        columns:
+          - name: event_date
+            description: '{{ doc("event_date") }}'
+          - name: user_id
+            description: '{{ doc("user_id") }}'
+          - name: event_name
+            description: '{{ doc("event_name") }}'

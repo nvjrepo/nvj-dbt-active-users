@@ -1,0 +1,671 @@
+version: 2
+models:
+  - name: stg_user_activities
+    description: staging model to deduplicated user activities
+    meta:
+      hidden: true
+    columns:
+      - name: unique_id
+        description: 'surrogate key generated from user_id, event_date, and event_name'
+        tests: &basic_tests [unique, not_null, dbt_utils.at_least_one]
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: event_date
+        description: '{{ doc("event_date") }}'
+        meta:
+          dimension:
+            type: date
+      - name: user_id
+        description: '{{ doc("user_id") }}'
+        meta:
+          dimension:
+            type: string
+      - name: event_name
+        description: '{{ doc("event_name") }}'
+        meta:
+          dimension:
+            type: string
+
+  - name: fct_users_activities_date_aggregated
+    description: Fact table containing aggregated user activities by date with calculated active periods. Each row represents a unique user-date combination with event counts, event names, and the calculated active end date (28-day activity window).
+    columns:
+      - name: user_event_date_id
+        description: '{{ doc("user_event_date_id") }}'
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: user_id
+        description: '{{ doc("user_id") }}'
+        meta:
+          dimension:
+            type: string
+      - name: event_date
+        description: '{{ doc("event_date") }}'
+        meta:
+          dimension:
+            type: date
+      - name: event_names
+        description: Comma-separated list of all event names that occurred on this date for this user
+        meta:
+          dimension:
+            type: string
+      - name: number_of_events
+        description: '{{ doc("number_of_events") }}'
+        meta:
+          dimension:
+            type: number
+            label: Number of Events
+      - name: next_date
+        description: The next date when the user had activity (used for calculating active period)
+        meta:
+          dimension:
+            type: date
+            hidden: true
+      - name: diff
+        description: Number of days between this event date and the next event date
+        meta:
+          dimension:
+            type: number
+            label: Days Between Events
+            hidden: true
+      - name: active_end_date
+        description: The end date of the user's active period (28 days from event_date or next activity date, whichever is sooner)
+        meta:
+          dimension:
+            type: date
+      - name: has_login_event
+        description: Boolean flag indicating whether user performed a login event on this date
+        meta:
+          dimension:
+            type: boolean
+            label: Has Login Event
+      - name: has_export_event
+        description: Boolean flag indicating whether user performed an export event on this date
+        meta:
+          dimension:
+            type: boolean
+            label: Has Export Event
+      - name: has_share_event
+        description: Boolean flag indicating whether user performed a share event on this date
+        meta:
+          dimension:
+            type: boolean
+            label: Has Share Event
+
+  - name: dim_users
+    description: Dimension table containing unique users with their first and last activity dates
+    columns:
+      - name: user_id
+        description: '{{ doc("user_id") }}'
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: string
+      - name: first_event_date
+        description: The first date when the user had any activity
+        meta:
+          dimension:
+            type: date
+            label: First Event Date
+      - name: last_event_date
+        description: The most recent date when the user had any activity
+        meta:
+          dimension:
+            type: date
+            label: Last Event Date
+      - name: user_tenure_days
+        description: Number of days since the user's first event
+        meta:
+          dimension:
+            type: number
+            label: User Tenure (Days)
+      - name: cohort_month
+        description: The month when the user first had activity (cohort grouping)
+        meta:
+          dimension:
+            type: date
+            label: User Cohort Month
+
+  - name: dim_dates
+    description: Dimension table containing a date spine from 2023-01-01 to 2024-12-31 generated using dbt_date package with comprehensive date attributes for time-based analysis
+    columns:
+      - name: date_day
+        description: Primary date column representing a single calendar day
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: date
+            label: Date
+      - name: prior_date_day
+        description: The previous calendar day (date_day - 1 day)
+        meta:
+          dimension:
+            type: date
+            label: Prior Date
+            hidden: true
+      - name: next_date_day
+        description: The next calendar day (date_day + 1 day)
+        meta:
+          dimension:
+            type: date
+            label: Next Date
+            hidden: true
+      - name: prior_year_date_day
+        description: The same date exactly 1 year prior
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Date
+            hidden: true
+      - name: prior_year_over_year_date_day
+        description: The date exactly 364 days prior (for year-over-year comparison)
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Over Year Date
+            hidden: true
+      - name: day_of_week
+        description: Day of week number (1=Sunday, 7=Saturday)
+        meta:
+          dimension:
+            type: number
+            label: Day of Week Number
+      - name: day_of_week_iso
+        description: ISO day of week number (1=Monday, 7=Sunday)
+        meta:
+          dimension:
+            type: number
+            label: Day of Week (ISO)
+            hidden: true
+      - name: day_of_week_name
+        description: Full name of the day (Monday, Tuesday, etc.)
+        meta:
+          dimension:
+            type: string
+            label: Day Name
+      - name: day_of_week_name_short
+        description: Abbreviated day name (Mon, Tue, etc.)
+        meta:
+          dimension:
+            type: string
+            label: Day Name (Short)
+      - name: day_of_month
+        description: Day number within the month (1-31)
+        meta:
+          dimension:
+            type: number
+            label: Day of Month
+      - name: day_of_year
+        description: Day number within the year (1-365/366)
+        meta:
+          dimension:
+            type: number
+            label: Day of Year
+      - name: week_start_date
+        description: Start date of the week (Sunday-based)
+        meta:
+          dimension:
+            type: date
+            label: Week Start Date
+      - name: week_end_date
+        description: End date of the week (Saturday-based)
+        meta:
+          dimension:
+            type: date
+            label: Week End Date
+      - name: prior_year_week_start_date
+        description: Start date of the comparable week in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Week Start
+            hidden: true
+      - name: prior_year_week_end_date
+        description: End date of the comparable week in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Week End
+            hidden: true
+      - name: week_of_year
+        description: Week number within the year (Sunday-based)
+        meta:
+          dimension:
+            type: number
+            label: Week of Year
+      - name: iso_week_start_date
+        description: Start date of the ISO week (Monday-based)
+        meta:
+          dimension:
+            type: date
+            label: ISO Week Start Date
+      - name: iso_week_end_date
+        description: End date of the ISO week (Sunday-based)
+        meta:
+          dimension:
+            type: date
+            label: ISO Week End Date
+      - name: prior_year_iso_week_start_date
+        description: Start date of the comparable ISO week in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year ISO Week Start
+            hidden: true
+      - name: prior_year_iso_week_end_date
+        description: End date of the comparable ISO week in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year ISO Week End
+            hidden: true
+      - name: iso_week_of_year
+        description: ISO week number within the year (Monday-based, 1-53)
+        meta:
+          dimension:
+            type: number
+            label: ISO Week of Year
+      - name: iso_year_week
+        description: ISO year-week format (YYYY-WNN)
+        meta:
+          dimension:
+            type: string
+            label: ISO Year-Week
+      - name: prior_year_week_of_year
+        description: Week number for the comparable week in prior year
+        meta:
+          dimension:
+            type: number
+            label: Prior Year Week Number
+            hidden: true
+      - name: prior_year_iso_week_of_year
+        description: ISO week number for the comparable week in prior year
+        meta:
+          dimension:
+            type: number
+            label: Prior Year ISO Week Number
+            hidden: true
+      - name: month_of_year
+        description: Month number within the year (1-12)
+        meta:
+          dimension:
+            type: number
+            label: Month Number
+      - name: month_name
+        description: Full name of the month (January, February, etc.)
+        meta:
+          dimension:
+            type: string
+            label: Month Name
+      - name: month_name_short
+        description: Abbreviated month name (JAN, FEB, etc.)
+        meta:
+          dimension:
+            type: string
+            label: Month Name (Short)
+      - name: month_start_date
+        description: First day of the month
+        meta:
+          dimension:
+            type: date
+            label: Month Start Date
+      - name: month_end_date
+        description: Last day of the month
+        meta:
+          dimension:
+            type: date
+            label: Month End Date
+      - name: prior_year_month_start_date
+        description: First day of the comparable month in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Month Start
+            hidden: true
+      - name: prior_year_month_end_date
+        description: Last day of the comparable month in prior year
+        meta:
+          dimension:
+            type: date
+            label: Prior Year Month End
+            hidden: true
+      - name: quarter_of_year
+        description: Quarter number within the year (1-4)
+        meta:
+          dimension:
+            type: number
+            label: Quarter
+      - name: quarter_start_date
+        description: First day of the quarter
+        meta:
+          dimension:
+            type: date
+            label: Quarter Start Date
+      - name: quarter_end_date
+        description: Last day of the quarter
+        meta:
+          dimension:
+            type: date
+            label: Quarter End Date
+      - name: year_number
+        description: Four-digit year number
+        meta:
+          dimension:
+            type: number
+            label: Year
+      - name: year_start_date
+        description: First day of the year (January 1st)
+        meta:
+          dimension:
+            type: date
+            label: Year Start Date
+      - name: year_end_date
+        description: Last day of the year (December 31st)
+        meta:
+          dimension:
+            type: date
+            label: Year End Date
+
+  - name: fct_daily_users
+    description: Fact table containing daily user records with activity status. Cross joins all users with all dates within their activity range and marks whether they were active on each day.
+    meta:
+      joins:
+        - join: dim_users
+          sql_on: ${fct_daily_users.user_id} = ${dim_users.user_id}
+        - join: dim_dates
+          sql_on: ${fct_daily_users.date_day} = ${dim_dates.date_day}          
+    columns:
+      - name: daily_user_id
+        description: Surrogate key generated from user_id and date_day
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: date_day
+        description: The date for this daily user record
+        meta:
+          dimension:
+            type: date
+            hidden: true
+      - name: user_id
+        description: '{{ doc("user_id") }}'
+        meta:
+          dimension:
+            type: string
+          metrics:
+            daily_active_users:
+              type: count_distinct
+              label: Daily Active Users (DAU)
+              description: Count of distinct users who were active on a given day
+              filters:
+                - is_active: 'true'
+            daily_inactive_users:
+              type: count_distinct
+              label: Daily Inactive Users
+              description: Count of distinct users who were not active on a given day
+              filters:
+                - is_active: 'true'                
+      - name: is_active
+        description: Boolean flag indicating whether the user was active on this date (based on 28-day activity window)
+        meta:
+          dimension:
+            type: boolean
+            label: Is Active
+      - name: number_of_events
+        description: '{{ doc("number_of_events") }}'
+        meta:
+          dimension:
+            type: number
+            label: Number of Events
+          metrics:
+            total_daily_events:
+              type: sum
+              label: Total Daily Events
+            avg_events_per_day:
+              type: average
+              label: Avg Events per Day
+              format: '0.00'
+
+  - name: fct_monthly_users
+    description: Fact table containing monthly user records with activity status.
+    meta:
+      joins:
+        - join: dim_users
+          sql_on: ${fct_monthly_users.user_id} = ${dim_users.user_id}
+    columns:
+      - name: monthly_user_id
+        description: '{{ doc("monthly_user_id") }}'
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: date_month
+        description: The month for this monthly user record
+        meta:
+          dimension:
+            type: date
+            label: Month
+      - name: user_id
+        description: '{{ doc("user_id") }}'
+        meta:
+          dimension:
+            type: string
+          metrics:
+            total_users:
+              type: count_distinct
+              label: Total Users
+              description: Total count of distinct users in the period
+            monthly_active_users:
+              type: count_distinct
+              label: Monthly Active Users (MAU)
+              description: Count of distinct users having at least 1 active day in the month
+              filters:
+                - has_active_days: 'true'
+            monthly_inactive_users:
+              type: count_distinct
+              label: Monthly Inactive Users
+              description: Count of distinct users having no active days in the month
+              filters:
+                - has_inactive_days: 'true'
+      - name: active_days_count
+        description: '{{ doc("active_days_count") }}'
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_active_days:
+              type: sum
+              label: Total Active Days
+            avg_active_days_per_user:
+              type: average
+              label: Avg Active Days per User
+              format: '0.00'
+      - name: inactive_days_count
+        description: '{{ doc("inactive_days_count") }}'
+        meta:
+          dimension:
+            type: number
+          metrics:
+            total_inactive_days:
+              type: sum
+              label: Total Inactive Days
+            avg_inactive_days_per_user:
+              type: average
+              label: Avg Inactive Days per User
+              format: '0.00'
+      - name: has_active_days
+        description: '{{ doc("has_active_days") }}'
+        meta:
+          dimension:
+            type: boolean
+            label: Has Active Days
+      - name: has_inactive_days
+        description: '{{ doc("has_inactive_days") }}'
+        meta:
+          dimension:
+            type: boolean
+            label: Has Inactive Days
+      - name: number_of_events
+        description: '{{ doc("number_of_events") }}'
+        meta:
+          dimension:
+            type: number
+            label: Total Events
+          metrics:
+            total_events:
+              type: sum
+              label: Total Events
+            avg_events_per_user:
+              type: average
+              label: Avg Events per User
+              format: '0.00'
+      - name: user_first_month
+        description: The first month when the user had any active days
+        meta:
+          dimension:
+            type: date
+            label: User First Month
+      - name: was_active_previous_month
+        description: Boolean flag indicating whether the user was active in the previous month
+        meta:
+          dimension:
+            type: boolean
+            label: Was Active Previous Month
+      - name: is_new_user
+        description: Boolean flag indicating whether this is the user's first active month
+        meta:
+          dimension:
+            type: boolean
+            label: Is New User
+          metrics:
+            new_users:
+              type: count_distinct
+              sql: "${user_id}"
+              label: New Users
+              description: Count of users who had their first active month
+              filters:
+                - is_new_user: 'true'
+            reactivated_users:
+              type: count_distinct
+              sql: "${user_id}"
+              label: Reactivated Users
+              description: Users who became active again after being inactive previous month
+              filters:
+                - was_active_previous_month: 'false'
+                - has_active_days: 'true'
+                - is_new_user: 'false'
+      - name: engagement_score
+        description: Ratio of active days to total days in the month (0-1 scale)
+        meta:
+          dimension:
+            type: number
+            sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN ${TABLE}.active_days_count::FLOAT / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
+            label: Engagement Score
+            format: '0.00%'
+          metrics:
+            avg_engagement_score:
+              type: average
+              sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN ${TABLE}.active_days_count::FLOAT / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
+              label: Avg Engagement Score
+              description: Average proportion of active days within the month across all users. Measures depth of engagement - higher scores indicate users are active on more days of the month.
+              format: '0.00%'
+      - name: activity_frequency_bucket
+        description: Categorisation of user activity level based on active days count
+        meta:
+          dimension:
+            type: string
+            sql: |
+              CASE
+                WHEN ${TABLE}.active_days_count = 0 THEN 'Inactive'
+                WHEN ${TABLE}.active_days_count BETWEEN 1 AND 5 THEN '1-5 days'
+                WHEN ${TABLE}.active_days_count BETWEEN 6 AND 15 THEN '6-15 days'
+                WHEN ${TABLE}.active_days_count BETWEEN 16 AND 25 THEN '16-25 days'
+                ELSE '26+ days'
+              END
+            label: Activity Frequency Bucket
+      - name: transition_type
+        description: '{{ doc("transition_type") }}'
+        meta:
+          dimension:
+            type: string
+            label: Transition Type
+
+  - name: fct_summary_monthly_cohort_performance
+    description: Summary table showing cohort retention and engagement metrics over time
+    meta:
+      label: Cohort Performance Analysis
+    columns:
+      - name: cohort_performance_id
+        description: Surrogate key generated from cohort_month and date_month
+        tests: *basic_tests
+        meta:
+          dimension:
+            type: string
+            hidden: true
+      - name: cohort_month
+        description: The month when the cohort first became active
+        meta:
+          dimension:
+            type: date
+            label: Cohort Month
+      - name: date_month
+        description: The analysis month for this cohort's performance
+        meta:
+          dimension:
+            type: date
+            label: Analysis Month
+      - name: months_since_cohort
+        description: Number of months since the cohort's first activity
+        meta:
+          dimension:
+            type: number
+            label: Months Since Cohort Start
+      - name: active_users
+        description: Number of users from this cohort who were active in the analysis month
+        meta:
+          metrics:
+            total_active_users_in_cohort:
+              type: sum
+              label: Total Active Users in Cohort
+      - name: total_cohort_users
+        description: Total number of users in this cohort
+        meta:
+          metrics:
+            total_cohort_size:
+              type: sum
+              label: Total Cohort Size
+      - name: avg_active_days
+        description: Average number of active days for users in this cohort during the analysis month
+        meta:
+          metrics:
+            cohort_avg_active_days:
+              type: average
+              label: Cohort Avg Active Days
+              format: '0.00'
+      - name: avg_engagement_score
+        description: Average proportion of active days within the month for users in this cohort. Calculated as active_days / total_days_in_month. Higher values indicate the cohort is engaging more frequently throughout the month.
+        meta:
+          metrics:
+            cohort_avg_engagement:
+              type: average
+              label: Cohort Avg Engagement Score
+              description: Average engagement depth for this cohort - shows how consistently cohort members engage throughout the month
+              format: '0.00%'
+      - name: retention_rate
+        description: Percentage of cohort users who remained active in the analysis month
+        meta:
+          dimension:
+            type: number
+            label: Retention Rate
+            format: 'percent'
+          metrics:
+            avg_retention_rate:
+              type: average
+              label: Avg Retention Rate
+              format: 'percent'

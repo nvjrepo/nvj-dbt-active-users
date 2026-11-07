@@ -1,0 +1,2 @@
+{{ config({"severity":"Warn"}) }}
+{{ dbt_utils.test_unique_combination_of_columns(combination_of_columns=["user_id","event_date","event_name"], model=get_where_subquery(source('source', 'user_activities'))) }}
