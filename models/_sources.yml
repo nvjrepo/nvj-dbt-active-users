@@ -1,10 +1,12 @@
 version: 2
 sources:
   - name: source
-    schema: james_nguyen
+    schema: raw
     tables:
       - name: user_activities
         description: raw activities users performed in Quillpad
+        config:
+          external_location: "read_csv('seeds/user_activities.csv', header=true, types=['DATE','VARCHAR','VARCHAR'])"
         tests:
           - dbt_utils.unique_combination_of_columns:
               combination_of_columns:

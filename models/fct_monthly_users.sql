@@ -1,6 +1,6 @@
 with monthly_aggregated as (
     select
-        {{ dbt.date_trunc('month', 'date_day') }} as date_month,
+        cast({{ dbt.date_trunc('month', 'date_day') }} as date) as date_month,
         user_id,
         sum(case when is_active then 1 else 0 end) as active_days_count,
         sum(case when not is_active then 1 else 0 end) as inactive_days_count,

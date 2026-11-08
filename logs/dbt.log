@@ -1,0 +1,1455 @@
+[0m11:14:14.732738 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:14:14.797419 | c7b8b08b-65e0-4d2f-97bd-c2865aa9ef6d ==============================
+[0m11:14:14.797419 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:14:14.798019 [debug] [MainThread]: running dbt with arguments {'profiles_dir': 'profiles', 'invocation_command': 'dbt deps --profiles-dir profiles', 'quiet': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'no_print': 'None', 'write_json': 'True', 'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs', 'static_parser': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'partial_parse': 'True', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'printer_width': '80', 'use_colors': 'True', 'hints_enabled': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'empty': 'None', 'log_format': 'default'}
+[0m11:14:14.861815 [debug] [MainThread]: Set downloads directory='/var/folders/03/mk4668b91s9cjjm23k2zd3k80000gp/T/dbt-downloads-hi1x4d2v'
+[0m11:14:14.862034 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m11:14:14.913112 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m11:14:14.913729 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m11:14:14.943993 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m11:14:14.946630 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/godatadriven/dbt_date.json
+[0m11:14:14.982740 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/godatadriven/dbt_date.json 200
+[0m11:14:14.985195 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m11:14:15.327009 [info ] [MainThread]: Installed from version 1.3.1
+[0m11:14:15.328761 [info ] [MainThread]: Updated version available: 1.4.1
+[0m11:14:15.329382 [info ] [MainThread]: Installing godatadriven/dbt_date
+[0m11:14:16.595849 [info ] [MainThread]: Installed from version 0.15.0
+[0m11:14:16.596166 [info ] [MainThread]: Updated version available: 0.21.0
+[0m11:14:16.596426 [info ] [MainThread]: 
+[0m11:14:16.596624 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils', 'godatadriven/dbt_date']                 
+Update your versions in packages.yml, then run dbt deps
+[0m11:14:16.623073 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 1.9240146, "process_in_blocks": "0", "process_kernel_time": 0.205692, "process_mem_max_rss": "128663552", "process_out_blocks": "0", "process_user_time": 0.68867}
+[0m11:14:16.623470 [debug] [MainThread]: Command `dbt deps` succeeded at 11:14:16.623403 after 1.92 seconds
+[0m11:14:16.623668 [debug] [MainThread]: Flushing usage events
+[0m11:14:17.336966 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:14:17.349455 | aa226bd0-5506-4cfb-9100-cc0dd2851852 ==============================
+[0m11:14:17.349455 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:14:17.349886 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt debug --profiles-dir profiles', 'use_experimental_parser': 'False', 'introspect': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'maximum_seed_size_mib': '1', 'write_json': 'True', 'target_path': 'None', 'printer_width': '80', 'quiet': 'False', 'warn_error': 'None', 'debug': 'False', 'indirect_selection': 'eager', 'empty': 'None', 'profiles_dir': 'profiles', 'fail_fast': 'False', 'use_colors': 'True', 'log_format': 'default', 'static_parser': 'True', 'hints_enabled': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs'}
+[0m11:14:17.354425 [info ] [MainThread]: dbt version: 1.12.6
+[0m11:14:17.354565 [info ] [MainThread]: python version: 3.12.13
+[0m11:14:17.354665 [info ] [MainThread]: python path: /Users/nam.nguyen/.pyenv/versions/3.12.13/envs/dbt-duckdb/bin/python
+[0m11:14:17.354760 [info ] [MainThread]: os info: macOS-26.7.1-arm64-arm-64bit
+[0m11:14:17.398827 [info ] [MainThread]: Using profiles dir at profiles
+[0m11:14:17.399030 [info ] [MainThread]: Using profiles.yml file at profiles/profiles.yml
+[0m11:14:17.399134 [info ] [MainThread]: Using dbt_project.yml file at /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/dbt_project.yml
+[0m11:14:17.399773 [info ] [MainThread]: adapter type: duckdb
+[0m11:14:17.399909 [info ] [MainThread]: adapter version: 1.11.1
+[0m11:14:17.438100 [info ] [MainThread]: Configuration:
+[0m11:14:17.438306 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:14:17.438405 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:14:17.438495 [info ] [MainThread]: Required dependencies:
+[0m11:14:17.438658 [debug] [MainThread]: Executing "git --help"
+[0m11:14:17.465263 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:14:17.465626 [debug] [MainThread]: STDERR: "b''"
+[0m11:14:17.465743 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:14:17.465857 [info ] [MainThread]: Connection:
+[0m11:14:17.465974 [info ] [MainThread]:   database: quillpad
+[0m11:14:17.466062 [info ] [MainThread]:   schema: dev
+[0m11:14:17.466144 [info ] [MainThread]:   path: quillpad.duckdb
+[0m11:14:17.466230 [info ] [MainThread]:   config_options: None
+[0m11:14:17.466316 [info ] [MainThread]:   extensions: None
+[0m11:14:17.466394 [info ] [MainThread]:   settings: {}
+[0m11:14:17.466475 [info ] [MainThread]:   external_root: .
+[0m11:14:17.466551 [info ] [MainThread]:   use_credential_provider: None
+[0m11:14:17.466628 [info ] [MainThread]:   attach: None
+[0m11:14:17.466704 [info ] [MainThread]:   filesystems: None
+[0m11:14:17.466778 [info ] [MainThread]:   remote: None
+[0m11:14:17.466854 [info ] [MainThread]:   plugins: None
+[0m11:14:17.466930 [info ] [MainThread]:   disable_transactions: False
+[0m11:14:17.467180 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m11:14:17.538449 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m11:14:17.575517 [debug] [MainThread]: Using duckdb connection "debug"
+[0m11:14:17.575699 [debug] [MainThread]: On debug: select 1 as id
+[0m11:14:17.575797 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:14:17.583017 [debug] [MainThread]: SQL status: OK in 0.007 seconds
+[0m11:14:17.583444 [debug] [MainThread]: On debug: Close
+[0m11:14:17.583598 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:14:17.583717 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:14:17.584797 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.27391297, "process_in_blocks": "0", "process_kernel_time": 0.125715, "process_mem_max_rss": "150732800", "process_out_blocks": "0", "process_user_time": 0.64533}
+[0m11:14:17.585003 [debug] [MainThread]: Command `dbt debug` succeeded at 11:14:17.584962 after 0.27 seconds
+[0m11:14:17.585120 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:14:17.585242 [debug] [MainThread]: Flushing usage events
+[0m11:14:39.581825 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:14:39.596105 | d084749c-eb50-4e66-9bce-bde5d2cdd83e ==============================
+[0m11:14:39.596105 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:14:39.596633 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'partial_parse': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'log_format': 'default', 'target_path': 'None', 'profiles_dir': 'profiles', 'log_cache_events': 'False', 'introspect': 'True', 'empty': 'False', 'invocation_command': 'dbt compile --profiles-dir profiles', 'printer_width': '80', 'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs', 'use_colors': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'debug': 'False', 'write_json': 'True', 'hints_enabled': 'True', 'fail_fast': 'False'}
+[0m11:14:39.708620 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m11:14:39.756045 [debug] [MainThread]: checksum: 7eb8ce4dd2aae3c08fbbb66bf0758d39592e0e936dae976f14711ffb639c23fb, vars: {}, profile: quillpad_active_users, target: dev, version: 1.12.6
+[0m11:14:39.807766 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m11:14:40.716307 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.unique_combination_of_columns`
+defined on 'source_user_activities' in package 'quillpad_active_users'
+(models/_sources.yml). Arguments to generic tests should be nested under the
+`arguments` property.
+[0m11:14:40.831072 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/manifest.json
+[0m11:14:40.832137 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/semantic_manifest.json
+[0m11:14:40.837479 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/osi_document.json
+[0m11:14:40.842683 [info ] [MainThread]: Found 7 models, 3 analyses, 1 seed, 22 data tests, 1 source, 768 macros
+[0m11:14:40.843746 [info ] [MainThread]: 
+[0m11:14:40.843892 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m11:14:40.843996 [info ] [MainThread]: 
+[0m11:14:40.844185 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:14:40.845995 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_quillpad_dev'
+[0m11:14:40.869406 [debug] [ThreadPool]: Using duckdb connection "list_quillpad_dev"
+[0m11:14:40.869595 [debug] [ThreadPool]: On list_quillpad_dev: BEGIN
+[0m11:14:40.869700 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:14:40.874151 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m11:14:40.874296 [debug] [ThreadPool]: Using duckdb connection "list_quillpad_dev"
+[0m11:14:40.874396 [debug] [ThreadPool]: On list_quillpad_dev: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "connection_name": "list_quillpad_dev"} */
+select
+      'quillpad' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'dev'
+    and lower(table_catalog) = 'quillpad'
+  
+[0m11:14:40.875941 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:14:40.876481 [debug] [ThreadPool]: On list_quillpad_dev: ROLLBACK
+[0m11:14:40.876678 [debug] [ThreadPool]: On list_quillpad_dev: Close
+[0m11:14:40.878326 [debug] [Thread-1 (]: Began running node model.quillpad_active_users.dim_dates
+[0m11:14:40.878508 [debug] [Thread-2 (]: Began running node model.quillpad_active_users.stg_user_activities
+[0m11:14:40.878688 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_quillpad_dev, now model.quillpad_active_users.dim_dates)
+[0m11:14:40.878840 [debug] [Thread-3 (]: Began running node seed.quillpad_active_users.user_activities
+[0m11:14:40.879133 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.quillpad_active_users.stg_user_activities'
+[0m11:14:40.879269 [debug] [Thread-4 (]: Began running node test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69
+[0m11:14:40.879396 [debug] [Thread-1 (]: Began compiling node model.quillpad_active_users.dim_dates
+[0m11:14:40.879553 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.quillpad_active_users.user_activities'
+[0m11:14:40.879669 [debug] [Thread-2 (]: Began compiling node model.quillpad_active_users.stg_user_activities
+[0m11:14:40.879823 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69'
+[0m11:14:40.882699 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:14:40.882840 [debug] [Thread-3 (]: Began compiling node seed.quillpad_active_users.user_activities
+[0m11:14:40.884083 [debug] [Thread-2 (]: Writing injected SQL for node "model.quillpad_active_users.stg_user_activities"
+[0m11:14:40.884215 [debug] [Thread-4 (]: Began compiling node test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69
+[0m11:14:40.884347 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: BEGIN
+[0m11:14:40.884641 [debug] [Thread-3 (]: Began executing node seed.quillpad_active_users.user_activities
+[0m11:14:40.887177 [debug] [Thread-4 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69"
+[0m11:14:40.887320 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:14:40.887588 [debug] [Thread-3 (]: Finished running node seed.quillpad_active_users.user_activities
+[0m11:14:40.888017 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:14:40.888158 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:14:40.888314 [debug] [Thread-2 (]: Began executing node model.quillpad_active_users.stg_user_activities
+[0m11:14:40.888453 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_dates"} */
+
+
+        select 
+        (date_diff('day', cast('2023-01-01' as timestamp)::timestamp, cast('2024-12-31' as timestamp)::timestamp ))
+    
+[0m11:14:40.888753 [debug] [Thread-2 (]: Finished running node model.quillpad_active_users.stg_user_activities
+[0m11:14:40.889029 [debug] [Thread-4 (]: Began executing node test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69
+[0m11:14:40.889348 [debug] [Thread-4 (]: Finished running node test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69
+[0m11:14:40.889494 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:14:40.889698 [debug] [Thread-6 (]: Began running node analysis.quillpad_active_users.test_simple_events
+[0m11:14:40.889854 [debug] [Thread-7 (]: Began running node analysis.quillpad_active_users.test_user_status
+[0m11:14:40.890079 [debug] [Thread-6 (]: Acquiring new duckdb connection 'analysis.quillpad_active_users.test_simple_events'
+[0m11:14:40.890192 [debug] [Thread-8 (]: Began running node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:14:40.898387 [debug] [Thread-1 (]: Writing injected SQL for node "model.quillpad_active_users.dim_dates"
+[0m11:14:40.898555 [debug] [Thread-5 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7
+[0m11:14:40.898736 [debug] [Thread-7 (]: Acquiring new duckdb connection 'analysis.quillpad_active_users.test_user_status'
+[0m11:14:40.898854 [debug] [Thread-3 (]: Began running node test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596
+[0m11:14:40.898988 [debug] [Thread-2 (]: Began running node test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57
+[0m11:14:40.899097 [debug] [Thread-6 (]: Began compiling node analysis.quillpad_active_users.test_simple_events
+[0m11:14:40.899255 [debug] [Thread-8 (]: Acquiring new duckdb connection 'model.quillpad_active_users.fct_users_activities_date_aggregated'
+[0m11:14:40.899453 [debug] [Thread-5 (]: Acquiring new duckdb connection 'test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7'
+[0m11:14:40.899576 [debug] [Thread-7 (]: Began compiling node analysis.quillpad_active_users.test_user_status
+[0m11:14:40.899726 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly seed.quillpad_active_users.user_activities, now test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596)
+[0m11:14:40.899865 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.stg_user_activities, now test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57)
+[0m11:14:40.899991 [debug] [Thread-1 (]: Began executing node model.quillpad_active_users.dim_dates
+[0m11:14:40.900822 [debug] [Thread-6 (]: Writing injected SQL for node "analysis.quillpad_active_users.test_simple_events"
+[0m11:14:40.900949 [debug] [Thread-8 (]: Began compiling node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:14:40.901054 [debug] [Thread-5 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7
+[0m11:14:40.902379 [debug] [Thread-7 (]: Writing injected SQL for node "analysis.quillpad_active_users.test_user_status"
+[0m11:14:40.902507 [debug] [Thread-3 (]: Began compiling node test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596
+[0m11:14:40.902618 [debug] [Thread-2 (]: Began compiling node test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57
+[0m11:14:40.902731 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: ROLLBACK
+[0m11:14:40.904667 [debug] [Thread-8 (]: Writing injected SQL for node "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:14:40.906898 [debug] [Thread-5 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7"
+[0m11:14:40.910791 [debug] [Thread-3 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596"
+[0m11:14:40.913895 [debug] [Thread-2 (]: Writing injected SQL for node "test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57"
+[0m11:14:40.914126 [debug] [Thread-7 (]: Began executing node analysis.quillpad_active_users.test_user_status
+[0m11:14:40.914258 [debug] [Thread-6 (]: Began executing node analysis.quillpad_active_users.test_simple_events
+[0m11:14:40.914415 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: Close
+[0m11:14:40.914820 [debug] [Thread-7 (]: Finished running node analysis.quillpad_active_users.test_user_status
+[0m11:14:40.915067 [debug] [Thread-8 (]: Began executing node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:14:40.915286 [debug] [Thread-6 (]: Finished running node analysis.quillpad_active_users.test_simple_events
+[0m11:14:40.915488 [debug] [Thread-5 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7
+[0m11:14:40.915673 [debug] [Thread-2 (]: Began executing node test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57
+[0m11:14:40.915918 [debug] [Thread-1 (]: Finished running node model.quillpad_active_users.dim_dates
+[0m11:14:40.916104 [debug] [Thread-3 (]: Began executing node test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596
+[0m11:14:40.916348 [debug] [Thread-8 (]: Finished running node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:14:40.916637 [debug] [Thread-5 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7
+[0m11:14:40.916913 [debug] [Thread-2 (]: Finished running node test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57
+[0m11:14:40.917385 [debug] [Thread-3 (]: Finished running node test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596
+[0m11:14:40.917546 [debug] [Thread-4 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f
+[0m11:14:40.917682 [debug] [Thread-7 (]: Began running node test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb
+[0m11:14:40.917835 [debug] [Thread-8 (]: Began running node test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7
+[0m11:14:40.918290 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69, now test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f)
+[0m11:14:40.918452 [debug] [Thread-1 (]: Began running node model.quillpad_active_users.dim_users
+[0m11:14:40.918601 [debug] [Thread-6 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589
+[0m11:14:40.918734 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly analysis.quillpad_active_users.test_user_status, now test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb)
+[0m11:14:40.918860 [debug] [Thread-5 (]: Began running node test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029
+[0m11:14:40.918984 [debug] [Thread-2 (]: Began running node test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2
+[0m11:14:40.919113 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.fct_users_activities_date_aggregated, now test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7)
+[0m11:14:40.919237 [debug] [Thread-4 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f
+[0m11:14:40.919374 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.dim_dates, now model.quillpad_active_users.dim_users)
+[0m11:14:40.919498 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly analysis.quillpad_active_users.test_simple_events, now test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589)
+[0m11:14:40.919617 [debug] [Thread-7 (]: Began compiling node test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb
+[0m11:14:40.919738 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7, now test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029)
+[0m11:14:40.919863 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57, now test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2)
+[0m11:14:40.919972 [debug] [Thread-8 (]: Began compiling node test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7
+[0m11:14:40.922440 [debug] [Thread-4 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f"
+[0m11:14:40.922570 [debug] [Thread-1 (]: Began compiling node model.quillpad_active_users.dim_users
+[0m11:14:40.922683 [debug] [Thread-6 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589
+[0m11:14:40.924872 [debug] [Thread-7 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb"
+[0m11:14:40.924995 [debug] [Thread-5 (]: Began compiling node test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029
+[0m11:14:40.925105 [debug] [Thread-2 (]: Began compiling node test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2
+[0m11:14:40.927254 [debug] [Thread-8 (]: Writing injected SQL for node "test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7"
+[0m11:14:40.928903 [debug] [Thread-1 (]: Writing injected SQL for node "model.quillpad_active_users.dim_users"
+[0m11:14:40.931611 [debug] [Thread-6 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589"
+[0m11:14:40.934021 [debug] [Thread-5 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029"
+[0m11:14:40.934156 [debug] [Thread-4 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f
+[0m11:14:40.936369 [debug] [Thread-2 (]: Writing injected SQL for node "test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2"
+[0m11:14:40.936581 [debug] [Thread-7 (]: Began executing node test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb
+[0m11:14:40.936969 [debug] [Thread-4 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f
+[0m11:14:40.937079 [debug] [Thread-8 (]: Began executing node test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7
+[0m11:14:40.937199 [debug] [Thread-6 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589
+[0m11:14:40.937506 [debug] [Thread-7 (]: Finished running node test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb
+[0m11:14:40.937630 [debug] [Thread-1 (]: Began executing node model.quillpad_active_users.dim_users
+[0m11:14:40.937876 [debug] [Thread-5 (]: Began executing node test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029
+[0m11:14:40.938099 [debug] [Thread-8 (]: Finished running node test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7
+[0m11:14:40.938317 [debug] [Thread-6 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589
+[0m11:14:40.938444 [debug] [Thread-2 (]: Began executing node test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2
+[0m11:14:40.938701 [debug] [Thread-1 (]: Finished running node model.quillpad_active_users.dim_users
+[0m11:14:40.938913 [debug] [Thread-5 (]: Finished running node test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029
+[0m11:14:40.939189 [debug] [Thread-2 (]: Finished running node test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2
+[0m11:14:40.939431 [debug] [Thread-3 (]: Began running node model.quillpad_active_users.fct_daily_users
+[0m11:14:40.939552 [debug] [Thread-2 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7
+[0m11:14:40.939655 [debug] [Thread-4 (]: Began running node test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812
+[0m11:14:40.939809 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596, now model.quillpad_active_users.fct_daily_users)
+[0m11:14:40.939940 [debug] [Thread-7 (]: Began running node test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9
+[0m11:14:40.940068 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2, now test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7)
+[0m11:14:40.940194 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f, now test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812)
+[0m11:14:40.940320 [debug] [Thread-3 (]: Began compiling node model.quillpad_active_users.fct_daily_users
+[0m11:14:40.940442 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb, now test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9)
+[0m11:14:40.940554 [debug] [Thread-2 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7
+[0m11:14:40.940657 [debug] [Thread-4 (]: Began compiling node test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812
+[0m11:14:40.942001 [debug] [Thread-3 (]: Writing injected SQL for node "model.quillpad_active_users.fct_daily_users"
+[0m11:14:40.942126 [debug] [Thread-7 (]: Began compiling node test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9
+[0m11:14:40.944390 [debug] [Thread-2 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7"
+[0m11:14:40.946553 [debug] [Thread-4 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812"
+[0m11:14:40.949056 [debug] [Thread-7 (]: Writing injected SQL for node "test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9"
+[0m11:14:40.949583 [debug] [Thread-3 (]: Began executing node model.quillpad_active_users.fct_daily_users
+[0m11:14:40.949733 [debug] [Thread-2 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7
+[0m11:14:40.949844 [debug] [Thread-4 (]: Began executing node test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812
+[0m11:14:40.950090 [debug] [Thread-3 (]: Finished running node model.quillpad_active_users.fct_daily_users
+[0m11:14:40.950362 [debug] [Thread-2 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7
+[0m11:14:40.950611 [debug] [Thread-4 (]: Finished running node test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812
+[0m11:14:40.950741 [debug] [Thread-7 (]: Began executing node test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9
+[0m11:14:40.951126 [debug] [Thread-4 (]: Began running node analysis.quillpad_active_users.test_current_model
+[0m11:14:40.951302 [debug] [Thread-6 (]: Began running node model.quillpad_active_users.fct_monthly_users
+[0m11:14:40.951450 [debug] [Thread-1 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b
+[0m11:14:40.951706 [debug] [Thread-7 (]: Finished running node test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9
+[0m11:14:40.951823 [debug] [Thread-5 (]: Began running node test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2
+[0m11:14:40.951983 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812, now analysis.quillpad_active_users.test_current_model)
+[0m11:14:40.952125 [debug] [Thread-8 (]: Began running node test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274
+[0m11:14:40.952272 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589, now model.quillpad_active_users.fct_monthly_users)
+[0m11:14:40.952427 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.dim_users, now test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b)
+[0m11:14:40.952607 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029, now test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2)
+[0m11:14:40.952735 [debug] [Thread-4 (]: Began compiling node analysis.quillpad_active_users.test_current_model
+[0m11:14:40.952862 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7, now test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274)
+[0m11:14:40.952989 [debug] [Thread-6 (]: Began compiling node model.quillpad_active_users.fct_monthly_users
+[0m11:14:40.953098 [debug] [Thread-1 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b
+[0m11:14:40.953203 [debug] [Thread-5 (]: Began compiling node test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2
+[0m11:14:40.953918 [debug] [Thread-4 (]: Writing injected SQL for node "analysis.quillpad_active_users.test_current_model"
+[0m11:14:40.954041 [debug] [Thread-8 (]: Began compiling node test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274
+[0m11:14:40.955655 [debug] [Thread-6 (]: Writing injected SQL for node "model.quillpad_active_users.fct_monthly_users"
+[0m11:14:40.958009 [debug] [Thread-1 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b"
+[0m11:14:40.960252 [debug] [Thread-5 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2"
+[0m11:14:40.962822 [debug] [Thread-8 (]: Writing injected SQL for node "test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274"
+[0m11:14:40.963216 [debug] [Thread-4 (]: Began executing node analysis.quillpad_active_users.test_current_model
+[0m11:14:40.963465 [debug] [Thread-4 (]: Finished running node analysis.quillpad_active_users.test_current_model
+[0m11:14:40.963657 [debug] [Thread-6 (]: Began executing node model.quillpad_active_users.fct_monthly_users
+[0m11:14:40.963779 [debug] [Thread-1 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b
+[0m11:14:40.963893 [debug] [Thread-8 (]: Began executing node test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274
+[0m11:14:40.964129 [debug] [Thread-6 (]: Finished running node model.quillpad_active_users.fct_monthly_users
+[0m11:14:40.964234 [debug] [Thread-5 (]: Began executing node test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2
+[0m11:14:40.964438 [debug] [Thread-1 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b
+[0m11:14:40.964635 [debug] [Thread-8 (]: Finished running node test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274
+[0m11:14:40.964878 [debug] [Thread-5 (]: Finished running node test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2
+[0m11:14:40.965118 [debug] [Thread-2 (]: Began running node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:14:40.965239 [debug] [Thread-5 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c
+[0m11:14:40.965343 [debug] [Thread-3 (]: Began running node test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96
+[0m11:14:40.965466 [debug] [Thread-7 (]: Began running node test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd
+[0m11:14:40.965609 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7, now model.quillpad_active_users.fct_summary_monthly_cohort_performance)
+[0m11:14:40.965743 [debug] [Thread-5 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2, now test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c)
+[0m11:14:40.965869 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.fct_daily_users, now test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96)
+[0m11:14:40.965991 [debug] [Thread-7 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9, now test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd)
+[0m11:14:40.966108 [debug] [Thread-2 (]: Began compiling node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:14:40.966214 [debug] [Thread-5 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c
+[0m11:14:40.966319 [debug] [Thread-3 (]: Began compiling node test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96
+[0m11:14:40.966420 [debug] [Thread-7 (]: Began compiling node test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd
+[0m11:14:40.968164 [debug] [Thread-2 (]: Writing injected SQL for node "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:14:40.970555 [debug] [Thread-5 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c"
+[0m11:14:40.972920 [debug] [Thread-3 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96"
+[0m11:14:40.975116 [debug] [Thread-7 (]: Writing injected SQL for node "test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd"
+[0m11:14:40.975610 [debug] [Thread-5 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c
+[0m11:14:40.975872 [debug] [Thread-5 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c
+[0m11:14:40.976004 [debug] [Thread-2 (]: Began executing node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:14:40.976133 [debug] [Thread-7 (]: Began executing node test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd
+[0m11:14:40.976299 [debug] [Thread-3 (]: Began executing node test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96
+[0m11:14:40.976551 [debug] [Thread-2 (]: Finished running node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:14:40.976775 [debug] [Thread-7 (]: Finished running node test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd
+[0m11:14:40.977012 [debug] [Thread-3 (]: Finished running node test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96
+[0m11:14:40.977525 [debug] [Thread-6 (]: Began running node test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc
+[0m11:14:40.977664 [debug] [Thread-1 (]: Began running node test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22
+[0m11:14:40.977832 [debug] [Thread-6 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.fct_monthly_users, now test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc)
+[0m11:14:40.977980 [debug] [Thread-8 (]: Began running node test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d
+[0m11:14:40.978168 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b, now test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22)
+[0m11:14:40.978325 [debug] [Thread-6 (]: Began compiling node test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc
+[0m11:14:40.978470 [debug] [Thread-8 (]: Re-using an available connection from the pool (formerly test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274, now test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d)
+[0m11:14:40.978597 [debug] [Thread-1 (]: Began compiling node test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22
+[0m11:14:40.981172 [debug] [Thread-6 (]: Writing injected SQL for node "test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc"
+[0m11:14:40.981309 [debug] [Thread-8 (]: Began compiling node test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d
+[0m11:14:40.983619 [debug] [Thread-1 (]: Writing injected SQL for node "test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22"
+[0m11:14:40.986103 [debug] [Thread-8 (]: Writing injected SQL for node "test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d"
+[0m11:14:40.986450 [debug] [Thread-1 (]: Began executing node test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22
+[0m11:14:40.986586 [debug] [Thread-6 (]: Began executing node test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc
+[0m11:14:40.986852 [debug] [Thread-1 (]: Finished running node test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22
+[0m11:14:40.986967 [debug] [Thread-8 (]: Began executing node test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d
+[0m11:14:40.987187 [debug] [Thread-6 (]: Finished running node test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc
+[0m11:14:40.987431 [debug] [Thread-8 (]: Finished running node test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d
+[0m11:14:40.988043 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:14:40.988161 [debug] [MainThread]: Connection 'test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22' was properly closed.
+[0m11:14:40.988406 [debug] [MainThread]: Connection 'model.quillpad_active_users.fct_summary_monthly_cohort_performance' was properly closed.
+[0m11:14:40.988605 [debug] [MainThread]: Connection 'test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96' was properly closed.
+[0m11:14:40.988713 [debug] [MainThread]: Connection 'analysis.quillpad_active_users.test_current_model' was properly closed.
+[0m11:14:40.988819 [debug] [MainThread]: Connection 'test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc' was properly closed.
+[0m11:14:40.988945 [debug] [MainThread]: Connection 'test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd' was properly closed.
+[0m11:14:40.989042 [debug] [MainThread]: Connection 'test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d' was properly closed.
+[0m11:14:40.989129 [debug] [MainThread]: Connection 'test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c' was properly closed.
+[0m11:14:40.990471 [debug] [MainThread]: Command end result
+[0m11:14:41.012634 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/manifest.json
+[0m11:14:41.013778 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/semantic_manifest.json
+[0m11:14:41.014816 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/osi_document.json
+[0m11:14:41.018295 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/run_results.json
+[0m11:14:41.018542 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:14:41.019762 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 1.469526, "process_in_blocks": "0", "process_kernel_time": 0.169986, "process_mem_max_rss": "175767552", "process_out_blocks": "0", "process_user_time": 1.866425}
+[0m11:14:41.019933 [debug] [MainThread]: Command `dbt compile` succeeded at 11:14:41.019901 after 1.47 seconds
+[0m11:14:41.020067 [debug] [MainThread]: Flushing usage events
+[0m11:16:32.703079 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:16:32.758213 | f9ff45fa-1c9e-4735-9e3f-1b8b71fbde06 ==============================
+[0m11:16:32.758213 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:16:32.758799 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'log_format': 'default', 'version_check': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'write_json': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'use_colors': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'quiet': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'profiles_dir': 'profiles', 'target_path': 'None', 'no_print': 'None', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'use_experimental_parser': 'False', 'hints_enabled': 'True', 'printer_width': '80'}
+[0m11:16:32.767642 [info ] [MainThread]: dbt version: 1.12.6
+[0m11:16:32.767924 [info ] [MainThread]: python version: 3.12.13
+[0m11:16:32.768049 [info ] [MainThread]: python path: /Users/nam.nguyen/.pyenv/versions/3.12.13/envs/dbt-duckdb/bin/python
+[0m11:16:32.768158 [info ] [MainThread]: os info: macOS-26.7.1-arm64-arm-64bit
+[0m11:16:32.886238 [info ] [MainThread]: Using profiles dir at profiles
+[0m11:16:32.886468 [info ] [MainThread]: Using profiles.yml file at profiles/profiles.yml
+[0m11:16:32.886582 [info ] [MainThread]: Using dbt_project.yml file at /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/dbt_project.yml
+[0m11:16:32.887506 [info ] [MainThread]: adapter type: duckdb
+[0m11:16:32.887663 [info ] [MainThread]: adapter version: 1.11.1
+[0m11:16:32.934152 [info ] [MainThread]: Configuration:
+[0m11:16:32.934379 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:16:32.934690 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:16:32.935010 [info ] [MainThread]: Required dependencies:
+[0m11:16:32.935238 [debug] [MainThread]: Executing "git --help"
+[0m11:16:32.954156 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:16:32.954651 [debug] [MainThread]: STDERR: "b''"
+[0m11:16:32.954809 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:16:32.954945 [info ] [MainThread]: Connection:
+[0m11:16:32.955135 [info ] [MainThread]:   database: quillpad
+[0m11:16:32.955282 [info ] [MainThread]:   schema: dev
+[0m11:16:32.955395 [info ] [MainThread]:   path: quillpad.duckdb
+[0m11:16:32.955496 [info ] [MainThread]:   config_options: None
+[0m11:16:32.955592 [info ] [MainThread]:   extensions: None
+[0m11:16:32.955687 [info ] [MainThread]:   settings: {}
+[0m11:16:32.955784 [info ] [MainThread]:   external_root: .
+[0m11:16:32.955875 [info ] [MainThread]:   use_credential_provider: None
+[0m11:16:32.955970 [info ] [MainThread]:   attach: None
+[0m11:16:32.956064 [info ] [MainThread]:   filesystems: None
+[0m11:16:32.956157 [info ] [MainThread]:   remote: None
+[0m11:16:32.956251 [info ] [MainThread]:   plugins: None
+[0m11:16:32.956340 [info ] [MainThread]:   disable_transactions: False
+[0m11:16:32.956666 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m11:16:33.005124 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m11:16:33.029237 [debug] [MainThread]: Using duckdb connection "debug"
+[0m11:16:33.029436 [debug] [MainThread]: On debug: select 1 as id
+[0m11:16:33.029652 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:16:33.040835 [debug] [MainThread]: SQL status: OK in 0.011 seconds
+[0m11:16:33.041296 [debug] [MainThread]: On debug: Close
+[0m11:16:33.041606 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m11:16:33.041801 [info ] [MainThread]: [32mAll checks passed![0m
+[0m11:16:33.043603 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.36896688, "process_in_blocks": "0", "process_kernel_time": 0.171541, "process_mem_max_rss": "150798336", "process_out_blocks": "0", "process_user_time": 0.737983}
+[0m11:16:33.043849 [debug] [MainThread]: Command `dbt debug` succeeded at 11:16:33.043804 after 0.37 seconds
+[0m11:16:33.044004 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:16:33.044144 [debug] [MainThread]: Flushing usage events
+[0m11:17:41.565108 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:17:41.581230 | 02e116bd-c961-48de-bb78-a5217193fef3 ==============================
+[0m11:17:41.581230 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:17:41.581704 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'warn_error': 'None', 'hints_enabled': 'True', 'invocation_command': 'dbt run', 'debug': 'False', 'use_colors': 'True', 'empty': 'False', 'write_json': 'True', 'target_path': 'None', 'log_cache_events': 'False', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'profiles_dir': 'profiles', 'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs', 'static_parser': 'True', 'quiet': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'partial_parse': 'True', 'introspect': 'True', 'version_check': 'True'}
+[0m11:17:41.705770 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m11:17:41.760312 [debug] [MainThread]: checksum: 7eb8ce4dd2aae3c08fbbb66bf0758d39592e0e936dae976f14711ffb639c23fb, vars: {}, profile: quillpad_active_users, target: dev, version: 1.12.6
+[0m11:17:41.870054 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:17:41.870431 [debug] [MainThread]: Partial parsing: updated file: quillpad_active_users://models/_sources.yml
+[0m11:17:41.999673 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/manifest.json
+[0m11:17:42.002096 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/semantic_manifest.json
+[0m11:17:42.012144 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/osi_document.json
+[0m11:17:42.018767 [info ] [MainThread]: Found 7 models, 3 analyses, 1 seed, 22 data tests, 1 source, 768 macros
+[0m11:17:42.019733 [info ] [MainThread]: 
+[0m11:17:42.019879 [info ] [MainThread]: Concurrency: 8 threads (target='dev')
+[0m11:17:42.019986 [info ] [MainThread]: 
+[0m11:17:42.020192 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m11:17:42.022071 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_quillpad'
+[0m11:17:42.064293 [debug] [ThreadPool]: Using duckdb connection "list_quillpad"
+[0m11:17:42.064490 [debug] [ThreadPool]: On list_quillpad: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "connection_name": "list_quillpad"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"quillpad"'
+    
+  
+  
+[0m11:17:42.064600 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:17:42.072046 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m11:17:42.072800 [debug] [ThreadPool]: On list_quillpad: Close
+[0m11:17:42.073197 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_quillpad, now create_quillpad_dev)
+[0m11:17:42.073453 [debug] [ThreadPool]: Creating schema "database: "quillpad"
+schema: "dev"
+"
+[0m11:17:42.076803 [debug] [ThreadPool]: Using duckdb connection "create_quillpad_dev"
+[0m11:17:42.076974 [debug] [ThreadPool]: On create_quillpad_dev: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "connection_name": "create_quillpad_dev"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='quillpad'
+        and type != 'duckdb'
+    
+  
+[0m11:17:42.077084 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:17:42.077937 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m11:17:42.078569 [debug] [ThreadPool]: Using duckdb connection "create_quillpad_dev"
+[0m11:17:42.078689 [debug] [ThreadPool]: On create_quillpad_dev: BEGIN
+[0m11:17:42.078878 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:17:42.078998 [debug] [ThreadPool]: Using duckdb connection "create_quillpad_dev"
+[0m11:17:42.079097 [debug] [ThreadPool]: On create_quillpad_dev: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "connection_name": "create_quillpad_dev"} */
+
+    
+    
+        create schema if not exists "quillpad"."dev"
+    
+[0m11:17:42.079445 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:17:42.079731 [debug] [ThreadPool]: On create_quillpad_dev: COMMIT
+[0m11:17:42.079841 [debug] [ThreadPool]: Using duckdb connection "create_quillpad_dev"
+[0m11:17:42.079937 [debug] [ThreadPool]: On create_quillpad_dev: COMMIT
+[0m11:17:42.080479 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:17:42.080591 [debug] [ThreadPool]: On create_quillpad_dev: Close
+[0m11:17:42.081213 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_quillpad_dev, now list_quillpad_dev)
+[0m11:17:42.083080 [debug] [ThreadPool]: Using duckdb connection "list_quillpad_dev"
+[0m11:17:42.083228 [debug] [ThreadPool]: On list_quillpad_dev: BEGIN
+[0m11:17:42.083331 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m11:17:42.083535 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m11:17:42.083633 [debug] [ThreadPool]: Using duckdb connection "list_quillpad_dev"
+[0m11:17:42.083737 [debug] [ThreadPool]: On list_quillpad_dev: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "connection_name": "list_quillpad_dev"} */
+select
+      'quillpad' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'dev'
+    and lower(table_catalog) = 'quillpad'
+  
+[0m11:17:42.086085 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m11:17:42.086562 [debug] [ThreadPool]: On list_quillpad_dev: ROLLBACK
+[0m11:17:42.086742 [debug] [ThreadPool]: On list_quillpad_dev: Close
+[0m11:17:42.086989 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:17:42.087104 [debug] [MainThread]: On master: BEGIN
+[0m11:17:42.087203 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:17:42.087365 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:17:42.087463 [debug] [MainThread]: On master: COMMIT
+[0m11:17:42.087561 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:17:42.087652 [debug] [MainThread]: On master: COMMIT
+[0m11:17:42.087779 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:17:42.087878 [debug] [MainThread]: On master: Close
+[0m11:17:42.089285 [debug] [Thread-1 (]: Began running node model.quillpad_active_users.dim_dates
+[0m11:17:42.089452 [debug] [Thread-2 (]: Began running node model.quillpad_active_users.stg_user_activities
+[0m11:17:42.089648 [info ] [Thread-1 (]: 1 of 7 START sql table model dev.dim_dates ..................................... [RUN]
+[0m11:17:42.089824 [info ] [Thread-2 (]: 2 of 7 START sql table model dev.stg_user_activities ........................... [RUN]
+[0m11:17:42.090006 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_quillpad_dev, now model.quillpad_active_users.dim_dates)
+[0m11:17:42.090203 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.quillpad_active_users.stg_user_activities'
+[0m11:17:42.090346 [debug] [Thread-1 (]: Began compiling node model.quillpad_active_users.dim_dates
+[0m11:17:42.090491 [debug] [Thread-2 (]: Began compiling node model.quillpad_active_users.stg_user_activities
+[0m11:17:42.108348 [debug] [Thread-2 (]: Writing injected SQL for node "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.111955 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.112308 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: BEGIN
+[0m11:17:42.112488 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:17:42.112906 [debug] [Thread-2 (]: Began executing node model.quillpad_active_users.stg_user_activities
+[0m11:17:42.113084 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:17:42.113568 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.113720 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.113867 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.stg_user_activities"} */
+select database_name, type from duckdb_databases()
+[0m11:17:42.114005 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_dates"} */
+
+
+        select 
+        (date_diff('day', cast('2023-01-01' as timestamp)::timestamp, cast('2024-12-31' as timestamp)::timestamp ))
+    
+[0m11:17:42.114149 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m11:17:42.114539 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.115087 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.115240 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.stg_user_activities"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('quillpad')
+                      and lower(schema_name) = lower('dev')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m11:17:42.115410 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:17:42.122015 [debug] [Thread-2 (]: SQL status: OK in 0.006 seconds
+[0m11:17:42.167632 [debug] [Thread-1 (]: Writing injected SQL for node "model.quillpad_active_users.dim_dates"
+[0m11:17:42.172418 [debug] [Thread-2 (]: Writing runtime sql for node "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.172883 [debug] [Thread-1 (]: Began executing node model.quillpad_active_users.dim_dates
+[0m11:17:42.174205 [debug] [Thread-1 (]: Writing runtime sql for node "model.quillpad_active_users.dim_dates"
+[0m11:17:42.174467 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.174615 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: BEGIN
+[0m11:17:42.174897 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.175047 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.175298 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_dates"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."dim_dates__dbt_tmp"
+  
+    
+    as (
+      
+    
+    with
+        base_dates as (
+    with
+        date_spine as (
+
+            
+
+    
+    with
+        rawdata as (
+
+            
+
+    
+
+    with
+        p as (
+            select 0 as generated_number
+            union all
+            select 1
+        ),
+        unioned as (
+
+            select
+
+                
+                    p0.generated_number * power(2, 0)
+                     + 
+                
+                    p1.generated_number * power(2, 1)
+                     + 
+                
+                    p2.generated_number * power(2, 2)
+                     + 
+                
+                    p3.generated_number * power(2, 3)
+                     + 
+                
+                    p4.generated_number * power(2, 4)
+                     + 
+                
+                    p5.generated_number * power(2, 5)
+                     + 
+                
+                    p6.generated_number * power(2, 6)
+                     + 
+                
+                    p7.generated_number * power(2, 7)
+                     + 
+                
+                    p8.generated_number * power(2, 8)
+                     + 
+                
+                    p9.generated_number * power(2, 9)
+                    
+                
+                + 1 as generated_number
+
+            from
+
+            
+                    p as p0  cross join 
+            
+                    p as p1  cross join 
+            
+                    p as p2  cross join 
+            
+                    p as p3  cross join 
+            
+                    p as p4  cross join 
+            
+                    p as p5  cross join 
+            
+                    p as p6  cross join 
+            
+                    p as p7  cross join 
+            
+                    p as p8  cross join 
+            
+                    p as p9 
+            
+
+        )
+
+    select *
+    from unioned
+    where generated_number <= 730
+    order by generated_number
+
+
+
+        ),
+
+        all_periods as (
+
+            select
+                (
+                    
+
+    (cast('2023-01-01' as timestamp) + cast((row_number() over (order by 1) - 1) as bigint) * interval 1 day)
+                ) as date_day
+            from rawdata
+
+        ),
+
+        filtered as (
+
+            select * from all_periods where date_day <= cast('2024-12-31' as timestamp)
+
+        )
+
+    select *
+    from filtered
+
+
+
+        )
+    select
+        cast(d.date_day as timestamp) as date_day
+    from date_spine d
+
+),
+        dates_with_prior_year_dates as (
+
+            select
+                cast(d.date_day as date) as date_day,
+                cast(
+                    
+
+    (d.date_day + cast(-1 as bigint) * interval 1 year) as date
+                ) as prior_year_date_day,
+                cast(
+                    
+
+    (d.date_day + cast(-364 as bigint) * interval 1 day) as date
+                ) as prior_year_over_year_date_day
+            from base_dates d
+
+        )
+    select
+        d.date_day,
+        cast(
+
+    (d.date_day + cast(-1 as bigint) * interval 1 day) as date) as prior_date_day,
+        cast(
+
+    (d.date_day + cast(1 as bigint) * interval 1 day) as date) as next_date_day,
+        d.prior_year_date_day as prior_year_date_day,
+        d.prior_year_over_year_date_day,
+        -- Sunday(1) to Saturday (7)
+        cast(date_part('dow', d.date_day) + 1 as integer) as day_of_week,
+        -- Monday(1) to Sunday (7)
+        cast(date_part('isodow', d.date_day) as integer) as day_of_week_iso,
+        dayname(d.date_day) as day_of_week_name,
+        substr(dayname(d.date_day), 1, 3) as day_of_week_name_short,
+        date_part('day', d.date_day) as day_of_month,
+        date_part('dayofyear', d.date_day) as day_of_year,
+
+        -- Sunday as week start date
+    cast(
+        
+
+    (date_trunc('week', 
+
+    (d.date_day + cast(1 as bigint) * interval 1 day)) + cast(-1 as bigint) * interval 1 day) as date
+    ) as week_start_date,
+        cast(
+
+    (-- Sunday as week start date
+    cast(
+        
+
+    (date_trunc('week', 
+
+    (d.date_day + cast(1 as bigint) * interval 1 day)) + cast(-1 as bigint) * interval 1 day) as date
+    ) + cast(6 as bigint) * interval 1 day) as date) as week_end_date,
+        -- Sunday as week start date
+    cast(
+        
+
+    (date_trunc('week', 
+
+    (d.prior_year_over_year_date_day + cast(1 as bigint) * interval 1 day)) + cast(-1 as bigint) * interval 1 day) as date
+    )
+        as prior_year_week_start_date,
+        cast(
+
+    (-- Sunday as week start date
+    cast(
+        
+
+    (date_trunc('week', 
+
+    (d.prior_year_over_year_date_day + cast(1 as bigint) * interval 1 day)) + cast(-1 as bigint) * interval 1 day) as date
+    ) + cast(6 as bigint) * interval 1 day) as date)
+        as prior_year_week_end_date,
+        cast(ceil(dayofyear(d.date_day) / 7) as int) as week_of_year,
+
+        cast(date_trunc('week', d.date_day) as date) as iso_week_start_date,
+        cast(
+
+    (cast(date_trunc('week', d.date_day) as date) + cast(6 as bigint) * interval 1 day) as date) as iso_week_end_date,
+        cast(date_trunc('week', d.prior_year_over_year_date_day) as date)
+        as prior_year_iso_week_start_date,
+        cast(
+
+    (cast(date_trunc('week', d.prior_year_over_year_date_day) as date) + cast(6 as bigint) * interval 1 day) as date)
+        as prior_year_iso_week_end_date,
+        
+    cast(date_part('week', d.date_day) as integer) as iso_week_of_year,
+        case
+        when 
+    cast(date_part('week', d.date_day) as integer) = 1
+        then
+            concat(
+                date_part('year', cast(
+
+    (cast(date_trunc('week', d.date_day) as date) + cast(6 as bigint) * interval 1 day) as date)),
+                '-W',
+                lpad(concat('',
+    cast(date_part('week', d.date_day) as integer)), 2, '0')
+            )
+        else
+            concat(
+                date_part('year', cast(date_trunc('week', d.date_day) as date)),
+                '-W',
+                lpad(concat('', 
+    cast(date_part('week', d.date_day) as integer)), 2, '0')
+            )
+    end as iso_year_week,
+
+        cast(ceil(dayofyear(d.prior_year_over_year_date_day) / 7) as int)
+        as prior_year_week_of_year,
+        
+    cast(date_part('week', d.prior_year_over_year_date_day) as integer)
+        as prior_year_iso_week_of_year,
+
+        cast(
+            date_part('month', d.date_day) as integer
+        ) as month_of_year,
+        monthname(d.date_day) as month_name,
+        substr(monthname(d.date_day), 1, 3) as month_name_short,
+
+        cast(date_trunc('month', d.date_day) as date) as month_start_date,
+        cast(cast(
+        
+
+    (
+
+    (date_trunc('month', d.date_day) + cast(1 as bigint) * interval 1 month) + cast(-1 as bigint) * interval 1 day)
+        as date) as date) as month_end_date,
+
+        cast(
+            date_trunc('month', d.prior_year_date_day) as date
+        ) as prior_year_month_start_date,
+        cast(
+            cast(
+        
+
+    (
+
+    (date_trunc('month', d.prior_year_date_day) + cast(1 as bigint) * interval 1 month) + cast(-1 as bigint) * interval 1 day)
+        as date) as date
+        ) as prior_year_month_end_date,
+
+        cast(
+            date_part('quarter', d.date_day) as integer
+        ) as quarter_of_year,
+        cast(
+            date_trunc('quarter', d.date_day) as date
+        ) as quarter_start_date,
+        cast(-- duckdb dateadd does not support quarter interval.
+    cast(
+        
+
+    (
+
+    (date_trunc('quarter', d.date_day) + cast(3 as bigint) * interval 1 month) + cast(-1 as bigint) * interval 1 day)
+        as date) as date) as quarter_end_date,
+
+        cast(
+            date_part('year', d.date_day) as integer
+        ) as year_number,
+        cast(date_trunc('year', d.date_day) as date) as year_start_date,
+        cast(cast(
+        
+
+    (
+
+    (date_trunc('year', d.date_day) + cast(1 as bigint) * interval 1 year) + cast(-1 as bigint) * interval 1 day)
+        as date) as date) as year_end_date
+    from dates_with_prior_year_dates d
+    order by 1
+
+
+    );
+    
+  
+[0m11:17:42.175550 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.176200 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.stg_user_activities"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."stg_user_activities__dbt_tmp"
+  
+    
+    as (
+      select distinct
+    md5(cast(coalesce(cast(user_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_date as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_name as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as unique_id,
+    user_id,
+    event_date,
+    event_name
+from read_csv('seeds/user_activities.csv', header=true, types=['DATE','VARCHAR','VARCHAR'])
+    );
+    
+  
+[0m11:17:42.198324 [debug] [Thread-1 (]: SQL status: OK in 0.023 seconds
+[0m11:17:42.200834 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.200991 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_dates"} */
+alter table "quillpad"."dev"."dim_dates__dbt_tmp" rename to "dim_dates"
+[0m11:17:42.201916 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:17:42.208375 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: COMMIT
+[0m11:17:42.208561 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.208744 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: COMMIT
+[0m11:17:42.209542 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m11:17:42.211415 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.dim_dates"
+[0m11:17:42.211573 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_dates"} */
+
+      drop table if exists "quillpad"."dev"."dim_dates__dbt_backup" cascade
+    
+[0m11:17:42.212027 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.213075 [debug] [Thread-1 (]: On model.quillpad_active_users.dim_dates: Close
+[0m11:17:42.214209 [info ] [Thread-1 (]: 1 of 7 OK created sql table model dev.dim_dates ................................ [[32mOK[0m in 0.12s]
+[0m11:17:42.214582 [debug] [Thread-1 (]: Finished running node model.quillpad_active_users.dim_dates
+[0m11:17:42.258477 [debug] [Thread-2 (]: SQL status: OK in 0.082 seconds
+[0m11:17:42.259513 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.259654 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.stg_user_activities"} */
+alter table "quillpad"."dev"."stg_user_activities__dbt_tmp" rename to "stg_user_activities"
+[0m11:17:42.259937 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.260573 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: COMMIT
+[0m11:17:42.260701 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.260812 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: COMMIT
+[0m11:17:42.310396 [debug] [Thread-2 (]: SQL status: OK in 0.049 seconds
+[0m11:17:42.311322 [debug] [Thread-2 (]: Using duckdb connection "model.quillpad_active_users.stg_user_activities"
+[0m11:17:42.311473 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.stg_user_activities"} */
+
+      drop table if exists "quillpad"."dev"."stg_user_activities__dbt_backup" cascade
+    
+[0m11:17:42.311732 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.312247 [debug] [Thread-2 (]: On model.quillpad_active_users.stg_user_activities: Close
+[0m11:17:42.312554 [info ] [Thread-2 (]: 2 of 7 OK created sql table model dev.stg_user_activities ...................... [[32mOK[0m in 0.22s]
+[0m11:17:42.312762 [debug] [Thread-2 (]: Finished running node model.quillpad_active_users.stg_user_activities
+[0m11:17:42.313113 [debug] [Thread-4 (]: Began running node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:17:42.313314 [info ] [Thread-4 (]: 3 of 7 START sql table model dev.fct_users_activities_date_aggregated .......... [RUN]
+[0m11:17:42.313535 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.quillpad_active_users.fct_users_activities_date_aggregated'
+[0m11:17:42.313664 [debug] [Thread-4 (]: Began compiling node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:17:42.318195 [debug] [Thread-4 (]: Writing injected SQL for node "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.318655 [debug] [Thread-4 (]: Began executing node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:17:42.319986 [debug] [Thread-4 (]: Writing runtime sql for node "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.320341 [debug] [Thread-4 (]: Using duckdb connection "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.320476 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: BEGIN
+[0m11:17:42.320592 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m11:17:42.320937 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.321147 [debug] [Thread-4 (]: Using duckdb connection "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.321298 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."fct_users_activities_date_aggregated__dbt_tmp"
+  
+    
+    as (
+      -- distinct table by user id and date
+with activities as (
+    select
+       user_id,
+       event_date,
+       
+    string_agg(
+        event_name,
+        ', '
+        order by event_name
+        ) as event_names,
+       count(*) as number_of_events
+
+    from "quillpad"."dev"."stg_user_activities"
+    group by 1,2
+
+),
+
+with_next_date as (
+    select
+        *,
+        lead(event_date) over (partition by user_id order by event_date) as next_date
+    from activities
+),
+
+-- find out active period
+windowed as (
+    select
+        md5(cast(coalesce(cast(user_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(event_date as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as user_event_date_id,
+        *,
+        case when next_date is null then 0 else 
+        (date_diff('day', event_date::timestamp, next_date::timestamp ))
+     end as diff,
+        cast(
+            case
+                when 
+        (date_diff('day', event_date::timestamp, next_date::timestamp ))
+     <= 28 then next_date
+                else 
+
+    (event_date + cast(28 as bigint) * interval 1 day)
+            end
+        as date) - 1 as active_end_date
+   from with_next_date
+)
+
+select
+    user_event_date_id,
+    user_id,
+    event_date,
+    event_names,
+    number_of_events,
+    next_date,
+    diff,
+    active_end_date,
+
+    -- Event type flags for filtering
+    case when event_names like '%login%' then true else false end as has_login_event,
+    case when event_names like '%export%' then true else false end as has_export_event,
+    case when event_names like '%share%' then true else false end as has_share_event
+
+from windowed
+    );
+    
+  
+[0m11:17:42.425641 [debug] [Thread-4 (]: SQL status: OK in 0.104 seconds
+[0m11:17:42.426718 [debug] [Thread-4 (]: Using duckdb connection "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.426862 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"} */
+alter table "quillpad"."dev"."fct_users_activities_date_aggregated__dbt_tmp" rename to "fct_users_activities_date_aggregated"
+[0m11:17:42.427175 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.427899 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: COMMIT
+[0m11:17:42.428043 [debug] [Thread-4 (]: Using duckdb connection "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.428164 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: COMMIT
+[0m11:17:42.468928 [debug] [Thread-4 (]: SQL status: OK in 0.041 seconds
+[0m11:17:42.469738 [debug] [Thread-4 (]: Using duckdb connection "model.quillpad_active_users.fct_users_activities_date_aggregated"
+[0m11:17:42.469872 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"} */
+
+      drop table if exists "quillpad"."dev"."fct_users_activities_date_aggregated__dbt_backup" cascade
+    
+[0m11:17:42.470108 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.470588 [debug] [Thread-4 (]: On model.quillpad_active_users.fct_users_activities_date_aggregated: Close
+[0m11:17:42.470932 [info ] [Thread-4 (]: 3 of 7 OK created sql table model dev.fct_users_activities_date_aggregated ..... [[32mOK[0m in 0.16s]
+[0m11:17:42.471198 [debug] [Thread-4 (]: Finished running node model.quillpad_active_users.fct_users_activities_date_aggregated
+[0m11:17:42.471511 [debug] [Thread-6 (]: Began running node model.quillpad_active_users.dim_users
+[0m11:17:42.471737 [info ] [Thread-6 (]: 4 of 7 START sql table model dev.dim_users ..................................... [RUN]
+[0m11:17:42.471950 [debug] [Thread-6 (]: Acquiring new duckdb connection 'model.quillpad_active_users.dim_users'
+[0m11:17:42.472070 [debug] [Thread-6 (]: Began compiling node model.quillpad_active_users.dim_users
+[0m11:17:42.473907 [debug] [Thread-6 (]: Writing injected SQL for node "model.quillpad_active_users.dim_users"
+[0m11:17:42.474249 [debug] [Thread-6 (]: Began executing node model.quillpad_active_users.dim_users
+[0m11:17:42.475428 [debug] [Thread-6 (]: Writing runtime sql for node "model.quillpad_active_users.dim_users"
+[0m11:17:42.475712 [debug] [Thread-6 (]: Using duckdb connection "model.quillpad_active_users.dim_users"
+[0m11:17:42.475830 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: BEGIN
+[0m11:17:42.475937 [debug] [Thread-6 (]: Opening a new connection, currently in state init
+[0m11:17:42.476163 [debug] [Thread-6 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.476273 [debug] [Thread-6 (]: Using duckdb connection "model.quillpad_active_users.dim_users"
+[0m11:17:42.476398 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_users"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."dim_users__dbt_tmp"
+  
+    
+    as (
+      with base as (
+    select
+        user_id,
+        min(event_date) as first_event_date,
+        max(event_date) as last_event_date,
+        max(active_end_date) as last_active_end_date
+    from "quillpad"."dev"."fct_users_activities_date_aggregated"
+    group by 1
+)
+
+select
+    user_id,
+    first_event_date,
+    last_event_date,
+    last_active_end_date,
+
+    -- Last day the daily spine should cover for this user:
+    --   * past last_event_date, so the final 28-day active window is kept
+    --   * plus the whole following calendar month, so the month the user drops out gets a row (-> 'Churned')
+    --   * never past the last date in the data, where activity is unknown
+    least(
+        cast(cast(
+        
+
+    (
+
+    (date_trunc('month', 
+
+    (last_active_end_date + cast(1 as bigint) * interval 1 month)) + cast(1 as bigint) * interval 1 month) + cast(-1 as bigint) * interval 1 day)
+        as date) as date),
+        max(last_event_date) over ()
+    ) as spine_end_date,
+
+    
+        (date_diff('day', first_event_date::timestamp, cast('2024-08-31' as date)::timestamp ))
+     as user_tenure_days,
+
+    cast(date_trunc('month', first_event_date) as date) as cohort_month
+
+from base
+    );
+    
+  
+[0m11:17:42.479528 [debug] [Thread-6 (]: SQL status: OK in 0.003 seconds
+[0m11:17:42.480475 [debug] [Thread-6 (]: Using duckdb connection "model.quillpad_active_users.dim_users"
+[0m11:17:42.480609 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_users"} */
+alter table "quillpad"."dev"."dim_users__dbt_tmp" rename to "dim_users"
+[0m11:17:42.480872 [debug] [Thread-6 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.481637 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: COMMIT
+[0m11:17:42.481775 [debug] [Thread-6 (]: Using duckdb connection "model.quillpad_active_users.dim_users"
+[0m11:17:42.481994 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: COMMIT
+[0m11:17:42.482628 [debug] [Thread-6 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.483276 [debug] [Thread-6 (]: Using duckdb connection "model.quillpad_active_users.dim_users"
+[0m11:17:42.483411 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.dim_users"} */
+
+      drop table if exists "quillpad"."dev"."dim_users__dbt_backup" cascade
+    
+[0m11:17:42.483635 [debug] [Thread-6 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.484143 [debug] [Thread-6 (]: On model.quillpad_active_users.dim_users: Close
+[0m11:17:42.484440 [info ] [Thread-6 (]: 4 of 7 OK created sql table model dev.dim_users ................................ [[32mOK[0m in 0.01s]
+[0m11:17:42.484642 [debug] [Thread-6 (]: Finished running node model.quillpad_active_users.dim_users
+[0m11:17:42.484974 [debug] [Thread-8 (]: Began running node model.quillpad_active_users.fct_daily_users
+[0m11:17:42.485176 [info ] [Thread-8 (]: 5 of 7 START sql table model dev.fct_daily_users ............................... [RUN]
+[0m11:17:42.485391 [debug] [Thread-8 (]: Acquiring new duckdb connection 'model.quillpad_active_users.fct_daily_users'
+[0m11:17:42.485519 [debug] [Thread-8 (]: Began compiling node model.quillpad_active_users.fct_daily_users
+[0m11:17:42.487171 [debug] [Thread-8 (]: Writing injected SQL for node "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.487498 [debug] [Thread-8 (]: Began executing node model.quillpad_active_users.fct_daily_users
+[0m11:17:42.489105 [debug] [Thread-8 (]: Writing runtime sql for node "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.489412 [debug] [Thread-8 (]: Using duckdb connection "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.489539 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: BEGIN
+[0m11:17:42.489653 [debug] [Thread-8 (]: Opening a new connection, currently in state init
+[0m11:17:42.489893 [debug] [Thread-8 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.490045 [debug] [Thread-8 (]: Using duckdb connection "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.490180 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_daily_users"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."fct_daily_users__dbt_tmp"
+  
+    
+    as (
+      -- cross join user and date
+with dates as (
+    select
+        dates.date_day,
+        users.user_id,
+        md5(cast(coalesce(cast(dates.date_day as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(users.user_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as daily_user_id
+
+    from "quillpad"."dev"."dim_dates" as dates
+    cross join "quillpad"."dev"."dim_users" as users
+    where dates.date_day between users.first_event_date and users.spine_end_date
+)
+
+select
+    dates.*,
+    active_check.user_id is not null as is_active,
+    coalesce(event_data.number_of_events, 0) as number_of_events
+
+from dates
+left join "quillpad"."dev"."fct_users_activities_date_aggregated" as active_check
+    on dates.date_day between active_check.event_date and active_check.active_end_date
+        and dates.user_id = active_check.user_id
+left join "quillpad"."dev"."fct_users_activities_date_aggregated" as event_data
+    on dates.date_day = event_data.event_date
+        and dates.user_id = event_data.user_id
+    );
+    
+  
+[0m11:17:42.808175 [debug] [Thread-8 (]: SQL status: OK in 0.318 seconds
+[0m11:17:42.809203 [debug] [Thread-8 (]: Using duckdb connection "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.809348 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_daily_users"} */
+alter table "quillpad"."dev"."fct_daily_users__dbt_tmp" rename to "fct_daily_users"
+[0m11:17:42.809628 [debug] [Thread-8 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.810260 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: COMMIT
+[0m11:17:42.810388 [debug] [Thread-8 (]: Using duckdb connection "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.810505 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: COMMIT
+[0m11:17:42.851660 [debug] [Thread-8 (]: SQL status: OK in 0.041 seconds
+[0m11:17:42.852541 [debug] [Thread-8 (]: Using duckdb connection "model.quillpad_active_users.fct_daily_users"
+[0m11:17:42.852694 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_daily_users"} */
+
+      drop table if exists "quillpad"."dev"."fct_daily_users__dbt_backup" cascade
+    
+[0m11:17:42.852971 [debug] [Thread-8 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.853492 [debug] [Thread-8 (]: On model.quillpad_active_users.fct_daily_users: Close
+[0m11:17:42.853794 [info ] [Thread-8 (]: 5 of 7 OK created sql table model dev.fct_daily_users .......................... [[32mOK[0m in 0.37s]
+[0m11:17:42.853994 [debug] [Thread-8 (]: Finished running node model.quillpad_active_users.fct_daily_users
+[0m11:17:42.854279 [debug] [Thread-1 (]: Began running node model.quillpad_active_users.fct_monthly_users
+[0m11:17:42.854509 [info ] [Thread-1 (]: 6 of 7 START sql table model dev.fct_monthly_users ............................. [RUN]
+[0m11:17:42.854735 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.quillpad_active_users.dim_dates, now model.quillpad_active_users.fct_monthly_users)
+[0m11:17:42.854883 [debug] [Thread-1 (]: Began compiling node model.quillpad_active_users.fct_monthly_users
+[0m11:17:42.856617 [debug] [Thread-1 (]: Writing injected SQL for node "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.857005 [debug] [Thread-1 (]: Began executing node model.quillpad_active_users.fct_monthly_users
+[0m11:17:42.858213 [debug] [Thread-1 (]: Writing runtime sql for node "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.858508 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.858633 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: BEGIN
+[0m11:17:42.858749 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m11:17:42.858994 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.859108 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.859255 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_monthly_users"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."fct_monthly_users__dbt_tmp"
+  
+    
+    as (
+      with monthly_aggregated as (
+    select
+        cast(date_trunc('month', date_day) as date) as date_month,
+        user_id,
+        sum(case when is_active then 1 else 0 end) as active_days_count,
+        sum(case when not is_active then 1 else 0 end) as inactive_days_count,
+        sum(case when is_active then 1 else 0 end) > 0 as has_active_days,
+        sum(case when not is_active then 1 else 0 end) > 0 as has_inactive_days,
+        sum(number_of_events) as number_of_events
+    from "quillpad"."dev"."fct_daily_users"
+    group by 1,2
+),
+
+with_previous_month as (
+    select
+        *,
+        lag(has_active_days) over (partition by user_id order by date_month) as was_active_previous_month
+    from monthly_aggregated
+),
+
+user_first_month as (
+    select
+        user_id,
+        min(date_month) as first_month
+    from monthly_aggregated
+    where has_active_days
+    group by 1
+)
+
+select
+    ma.date_month,
+    ma.user_id,
+    ma.active_days_count,
+    ma.inactive_days_count,
+    ma.has_active_days,
+    ma.has_inactive_days,
+    ma.number_of_events,
+    ufm.first_month as user_first_month,
+
+    coalesce(wpm.was_active_previous_month, false) as was_active_previous_month,
+    case when ufm.first_month = ma.date_month then true else false end as is_new_user,
+
+    -- Transition type logic
+    case
+        when wpm.was_active_previous_month is null and ma.has_active_days then 'New'
+        when wpm.was_active_previous_month and ma.has_active_days then 'Retained'
+        when wpm.was_active_previous_month and not ma.has_active_days then 'Churned'
+        when not coalesce(wpm.was_active_previous_month, false) and ma.has_active_days then 'Reactivated'
+        else 'Inactive'
+    end as transition_type,
+
+    md5(cast(coalesce(cast(ma.date_month as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(ma.user_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as monthly_user_id
+
+from monthly_aggregated ma
+left join with_previous_month wpm
+    on ma.user_id = wpm.user_id
+    and ma.date_month = wpm.date_month
+left join user_first_month ufm
+    on ma.user_id = ufm.user_id
+    );
+    
+  
+[0m11:17:42.870685 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m11:17:42.871889 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.872055 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_monthly_users"} */
+alter table "quillpad"."dev"."fct_monthly_users__dbt_tmp" rename to "fct_monthly_users"
+[0m11:17:42.872352 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.873021 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: COMMIT
+[0m11:17:42.873154 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.873268 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: COMMIT
+[0m11:17:42.879764 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m11:17:42.880581 [debug] [Thread-1 (]: Using duckdb connection "model.quillpad_active_users.fct_monthly_users"
+[0m11:17:42.880739 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_monthly_users"} */
+
+      drop table if exists "quillpad"."dev"."fct_monthly_users__dbt_backup" cascade
+    
+[0m11:17:42.881014 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.881566 [debug] [Thread-1 (]: On model.quillpad_active_users.fct_monthly_users: Close
+[0m11:17:42.882009 [info ] [Thread-1 (]: 6 of 7 OK created sql table model dev.fct_monthly_users ........................ [[32mOK[0m in 0.03s]
+[0m11:17:42.882285 [debug] [Thread-1 (]: Finished running node model.quillpad_active_users.fct_monthly_users
+[0m11:17:42.882627 [debug] [Thread-5 (]: Began running node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:17:42.882862 [info ] [Thread-5 (]: 7 of 7 START sql table model dev.fct_summary_monthly_cohort_performance ........ [RUN]
+[0m11:17:42.883073 [debug] [Thread-5 (]: Acquiring new duckdb connection 'model.quillpad_active_users.fct_summary_monthly_cohort_performance'
+[0m11:17:42.883196 [debug] [Thread-5 (]: Began compiling node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:17:42.885160 [debug] [Thread-5 (]: Writing injected SQL for node "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.885546 [debug] [Thread-5 (]: Began executing node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:17:42.886736 [debug] [Thread-5 (]: Writing runtime sql for node "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.887031 [debug] [Thread-5 (]: Using duckdb connection "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.887156 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: BEGIN
+[0m11:17:42.887269 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m11:17:42.887514 [debug] [Thread-5 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.887625 [debug] [Thread-5 (]: Using duckdb connection "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.887760 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"} */
+
+    
+
+    create  table
+      "quillpad"."dev"."fct_summary_monthly_cohort_performance__dbt_tmp"
+  
+    
+    as (
+      -- fixed denominator: every user in the cohort, whether or not they still have rows that month
+with cohort_sizes as (
+    select
+        cohort_month,
+        count(*) as cohort_size
+    from "quillpad"."dev"."dim_users"
+    group by 1
+),
+
+monthly as (
+    select
+        du.cohort_month,
+        fm.date_month,
+
+        count(distinct case when fm.has_active_days then fm.user_id end) as active_users,
+
+        -- Engagement metrics (users with rows in the month)
+        avg(fm.active_days_count) as avg_active_days,
+        avg(
+            case
+                when (fm.active_days_count + fm.inactive_days_count) > 0
+                then cast(fm.active_days_count as double) / (fm.active_days_count + fm.inactive_days_count)
+                else 0
+            end
+        ) as avg_engagement_score
+
+    from "quillpad"."dev"."fct_monthly_users" as fm
+    inner join "quillpad"."dev"."dim_users" as du
+        on fm.user_id = du.user_id
+    group by 1,2
+)
+
+select
+    md5(cast(coalesce(cast(monthly.cohort_month as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(monthly.date_month as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as cohort_performance_id,
+    monthly.cohort_month,
+    monthly.date_month,
+    
+        (date_diff('month', monthly.cohort_month::timestamp, monthly.date_month::timestamp ))
+     as months_since_cohort,
+
+    -- Counts
+    monthly.active_users,
+    cohort_sizes.cohort_size as total_cohort_users,
+
+    monthly.avg_active_days,
+    monthly.avg_engagement_score,
+
+    -- Retention rate: active cohort users / full cohort size
+    cast(monthly.active_users as double) / nullif(cohort_sizes.cohort_size, 0) as retention_rate
+
+from monthly
+inner join cohort_sizes
+    on monthly.cohort_month = cohort_sizes.cohort_month
+    );
+    
+  
+[0m11:17:42.893003 [debug] [Thread-5 (]: SQL status: OK in 0.005 seconds
+[0m11:17:42.893983 [debug] [Thread-5 (]: Using duckdb connection "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.894118 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"} */
+alter table "quillpad"."dev"."fct_summary_monthly_cohort_performance__dbt_tmp" rename to "fct_summary_monthly_cohort_performance"
+[0m11:17:42.894383 [debug] [Thread-5 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.895090 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: COMMIT
+[0m11:17:42.895224 [debug] [Thread-5 (]: Using duckdb connection "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.895338 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: COMMIT
+[0m11:17:42.895726 [debug] [Thread-5 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.896383 [debug] [Thread-5 (]: Using duckdb connection "model.quillpad_active_users.fct_summary_monthly_cohort_performance"
+[0m11:17:42.896533 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "quillpad_active_users", "target_name": "dev", "node_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"} */
+
+      drop table if exists "quillpad"."dev"."fct_summary_monthly_cohort_performance__dbt_backup" cascade
+    
+[0m11:17:42.896750 [debug] [Thread-5 (]: SQL status: OK in 0.000 seconds
+[0m11:17:42.897243 [debug] [Thread-5 (]: On model.quillpad_active_users.fct_summary_monthly_cohort_performance: Close
+[0m11:17:42.897548 [info ] [Thread-5 (]: 7 of 7 OK created sql table model dev.fct_summary_monthly_cohort_performance ... [[32mOK[0m in 0.01s]
+[0m11:17:42.897751 [debug] [Thread-5 (]: Finished running node model.quillpad_active_users.fct_summary_monthly_cohort_performance
+[0m11:17:42.898336 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:17:42.898452 [debug] [MainThread]: On master: BEGIN
+[0m11:17:42.898548 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:17:42.898719 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:17:42.898817 [debug] [MainThread]: On master: COMMIT
+[0m11:17:42.898913 [debug] [MainThread]: Using duckdb connection "master"
+[0m11:17:42.899002 [debug] [MainThread]: On master: COMMIT
+[0m11:17:42.899127 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m11:17:42.899220 [debug] [MainThread]: On master: Close
+[0m11:17:42.899355 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:17:42.899450 [debug] [MainThread]: Connection 'model.quillpad_active_users.fct_monthly_users' was properly closed.
+[0m11:17:42.899536 [debug] [MainThread]: Connection 'model.quillpad_active_users.stg_user_activities' was properly closed.
+[0m11:17:42.899622 [debug] [MainThread]: Connection 'model.quillpad_active_users.fct_users_activities_date_aggregated' was properly closed.
+[0m11:17:42.899701 [debug] [MainThread]: Connection 'model.quillpad_active_users.dim_users' was properly closed.
+[0m11:17:42.899783 [debug] [MainThread]: Connection 'model.quillpad_active_users.fct_daily_users' was properly closed.
+[0m11:17:42.899866 [debug] [MainThread]: Connection 'model.quillpad_active_users.fct_summary_monthly_cohort_performance' was properly closed.
+[0m11:17:42.900004 [info ] [MainThread]: 
+[0m11:17:42.900118 [info ] [MainThread]: Finished running 7 table models in 0 hours 0 minutes and 0.88 seconds (0.88s).
+[0m11:17:42.900576 [debug] [MainThread]: Command end result
+[0m11:17:42.923323 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/manifest.json
+[0m11:17:42.924351 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/semantic_manifest.json
+[0m11:17:42.925088 [debug] [MainThread]: Wrote artifact OsiDocument to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/osi_document.json
+[0m11:17:42.927938 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/target/run_results.json
+[0m11:17:42.928071 [info ] [MainThread]: 
+[0m11:17:42.928213 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:17:42.928320 [info ] [MainThread]: 
+[0m11:17:42.928438 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+[0m11:17:42.929944 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.3925968, "process_in_blocks": "0", "process_kernel_time": 0.301546, "process_mem_max_rss": "540557312", "process_out_blocks": "0", "process_user_time": 3.132626}
+[0m11:17:42.930143 [debug] [MainThread]: Command `dbt run` succeeded at 11:17:42.930111 after 1.39 seconds
+[0m11:17:42.930284 [debug] [MainThread]: Flushing usage events
+[0m11:41:02.515120 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 11:41:02.551152 | ed13623b-e2c6-4a75-94e7-fc58904f2ed4 ==============================
+[0m11:41:02.551152 [info ] [MainThread]: Running with dbt=1.12.6
+[0m11:41:02.551680 [debug] [MainThread]: running dbt with arguments {'maximum_seed_size_mib': '1', 'profiles_dir': 'profiles', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir profiles --target prod', 'fail_fast': 'False', 'no_print': 'None', 'write_json': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'introspect': 'True', 'version_check': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/logs', 'empty': 'None', 'hints_enabled': 'True', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'quiet': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'printer_width': '80', 'partial_parse': 'True', 'static_parser': 'True'}
+[0m11:41:02.560448 [info ] [MainThread]: dbt version: 1.12.6
+[0m11:41:02.560642 [info ] [MainThread]: python version: 3.12.13
+[0m11:41:02.560755 [info ] [MainThread]: python path: /Users/nam.nguyen/.pyenv/versions/3.12.13/envs/dbt-duckdb/bin/python
+[0m11:41:02.560860 [info ] [MainThread]: os info: macOS-26.7.1-arm64-arm-64bit
+[0m11:41:02.660511 [info ] [MainThread]: Using profiles dir at profiles
+[0m11:41:02.660742 [info ] [MainThread]: Using profiles.yml file at profiles/profiles.yml
+[0m11:41:02.660861 [info ] [MainThread]: Using dbt_project.yml file at /Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/dbt_project.yml
+[0m11:41:02.662007 [info ] [MainThread]: adapter type: duckdb
+[0m11:41:02.662140 [info ] [MainThread]: adapter version: 1.11.1
+[0m11:41:02.707452 [info ] [MainThread]: Configuration:
+[0m11:41:02.707690 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:41:02.707810 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m11:41:02.707917 [info ] [MainThread]: Required dependencies:
+[0m11:41:02.708130 [debug] [MainThread]: Executing "git --help"
+[0m11:41:02.730710 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:41:02.731191 [debug] [MainThread]: STDERR: "b''"
+[0m11:41:02.731441 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:41:02.731593 [info ] [MainThread]: Connection:
+[0m11:41:02.731763 [info ] [MainThread]:   database: user_activities
+[0m11:41:02.731874 [info ] [MainThread]:   schema: prod
+[0m11:41:02.731980 [info ] [MainThread]:   path: md:user_activities
+[0m11:41:02.732081 [info ] [MainThread]:   config_options: None
+[0m11:41:02.732176 [info ] [MainThread]:   extensions: None
+[0m11:41:02.732283 [info ] [MainThread]:   settings: {}
+[0m11:41:02.732378 [info ] [MainThread]:   external_root: .
+[0m11:41:02.732469 [info ] [MainThread]:   use_credential_provider: None
+[0m11:41:02.732563 [info ] [MainThread]:   attach: None
+[0m11:41:02.732650 [info ] [MainThread]:   filesystems: None
+[0m11:41:02.732740 [info ] [MainThread]:   remote: None
+[0m11:41:02.732842 [info ] [MainThread]:   plugins: [{'module': 'motherduck', 'alias': None, 'config': None}]
+[0m11:41:02.732938 [info ] [MainThread]:   disable_transactions: False
+[0m11:41:02.733236 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m11:41:02.779930 [debug] [MainThread]: Acquiring new duckdb connection 'debug'
+[0m11:41:02.813394 [debug] [MainThread]: Using duckdb connection "debug"
+[0m11:41:02.813613 [debug] [MainThread]: On debug: select 1 as id
+[0m11:41:02.813738 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:41:06.633130 [debug] [MainThread]: DuckDB adapter: duckdb error: Invalid Input Error: Initialization function "motherduck_duckdb_cpp_init" from file "/Users/nam.nguyen/.duckdb/extensions/v1.5.5/osx_arm64/motherduck.duckdb_extension" threw an exception: "Failed to attach 'user_activities': no database/share named "user_activities" found"
+[0m11:41:06.633728 [debug] [MainThread]: DuckDB adapter: Error running SQL: select 1 as id
+[0m11:41:06.634019 [debug] [MainThread]: DuckDB adapter: Rolling back transaction.
+[0m11:41:06.634274 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:41:09.157858 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:41:09.158523 [info ] [MainThread]: [31m1 check failed:[0m
+[0m11:41:09.158812 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Invalid Input Error: Initialization function "motherduck_duckdb_cpp_init" from file "/Users/nam.nguyen/.duckdb/extensions/v1.5.5/osx_arm64/motherduck.duckdb_extension" threw an exception: "Failed to attach 'user_activities': no database/share named "user_activities" found"
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:41:09.168015 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 6.6805587, "process_in_blocks": "0", "process_kernel_time": 0.298009, "process_mem_max_rss": "181878784", "process_out_blocks": "0", "process_user_time": 1.15604}
+[0m11:41:09.168691 [debug] [MainThread]: Command `dbt debug` failed at 11:41:09.168581 after 6.68 seconds
+[0m11:41:09.169080 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:41:09.169387 [debug] [MainThread]: Flushing usage events

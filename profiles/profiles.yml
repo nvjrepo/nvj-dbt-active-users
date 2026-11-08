@@ -2,14 +2,16 @@ quillpad_active_users:
   target: dev
   outputs:
     dev:
-      type: snowflake
-      account: '{{ env_var("DBT_ENV_SNOWFLAKE_ACCOUNT") }}'
-      schema: '{{ env_var("DBT_ENV_SNOWFLAKE_USERNAME")  }}'
-      user: '{{ env_var("DBT_ENV_SNOWFLAKE_USERNAME") }}'
-      password: '{{ env_var("DBT_ENV_SECRET_SNOWFLAKE_PASSWORD") }}'
-      role: '{{ env_var("DBT_ENV_SNOWFLAKE_ROLE") }}'
-      database: '{{ env_var("DBT_ENV_SNOWFLAKE_DATABASE") }}'
-      warehouse: '{{ env_var("DBT_ENV_SNOWFLAKE_WAREHOUSE") }}'      
-      keepalives_idle: 20
+      type: duckdb
+      # Local DuckDB database file (relative to where dbt is run, i.e. the repo root).
+      # Override with DBT_DUCKDB_PATH to point at another database file.
+      path: '{{ env_var("DBT_DUCKDB_PATH", "quillpad.duckdb") }}'
+      schema: '{{ env_var("DBT_DUCKDB_SCHEMA", "dev") }}'
       threads: 8
-      client_session_keep_alive: False
+    prod:
+      type: duckdb
+      # MotherDuck database. Auth uses the MOTHERDUCK_TOKEN env var (service account token);
+      # never put the token in this file.
+      path: 'md:user_activities'
+      schema: '{{ env_var("DBT_DUCKDB_SCHEMA", "prod") }}'
+      threads: 4

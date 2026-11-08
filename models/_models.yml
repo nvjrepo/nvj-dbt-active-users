@@ -117,6 +117,18 @@ models:
           dimension:
             type: date
             label: Last Event Date
+      - name: last_active_end_date
+        description: Last day of the user's final 28-day active window (last_event_date + 27)
+        meta:
+          dimension:
+            type: date
+            label: Last Active End Date
+      - name: spine_end_date
+        description: Last day fct_daily_users covers for this user - end of the calendar month after last_active_end_date, capped at the last date in the data
+        meta:
+          dimension:
+            type: date
+            hidden: true
       - name: user_tenure_days
         description: Number of days since the user's first event
         meta:
@@ -409,7 +421,7 @@ models:
               label: Daily Inactive Users
               description: Count of distinct users who were not active on a given day
               filters:
-                - is_active: 'true'                
+                - is_active: 'false'                
       - name: is_active
         description: Boolean flag indicating whether the user was active on this date (based on 28-day activity window)
         meta:
@@ -467,12 +479,6 @@ models:
               description: Count of distinct users having at least 1 active day in the month
               filters:
                 - has_active_days: 'true'
-            monthly_inactive_users:
-              type: count_distinct
-              label: Monthly Inactive Users
-              description: Count of distinct users having no active days in the month
-              filters:
-                - has_inactive_days: 'true'
       - name: active_days_count
         description: '{{ doc("active_days_count") }}'
         meta:
@@ -565,13 +571,13 @@ models:
         meta:
           dimension:
             type: number
-            sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN ${TABLE}.active_days_count::FLOAT / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
+            sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN CAST(${TABLE}.active_days_count AS DOUBLE) / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
             label: Engagement Score
             format: '0.00%'
           metrics:
             avg_engagement_score:
               type: average
-              sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN ${TABLE}.active_days_count::FLOAT / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
+              sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN CAST(${TABLE}.active_days_count AS DOUBLE) / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
               label: Avg Engagement Score
               description: Average proportion of active days within the month across all users. Measures depth of engagement - higher scores indicate users are active on more days of the month.
               format: '0.00%'

@@ -5,7 +5,8 @@ with base as (
     select
         user_id,
         min(event_date) as first_event_date,
-        max(event_date) as last_event_date
+        max(event_date) as last_event_date,
+        max(active_end_date) as last_active_end_date
     from {{ ref('fct_users_activities_date_aggregated') }}
     group by 1
 )
@@ -14,8 +15,19 @@ select
     user_id,
     first_event_date,
     last_event_date,
-    datediff('day', first_event_date, '{{ reporting_date }}'::date) as user_tenure_days,
+    last_active_end_date,
 
-    {{ dbt.date_trunc('month', 'first_event_date') }} as cohort_month
+    -- Last day the daily spine should cover for this user:
+    --   * past last_event_date, so the final 28-day active window is kept
+    --   * plus the whole following calendar month, so the month the user drops out gets a row (-> 'Churned')
+    --   * never past the last date in the data, where activity is unknown
+    least(
+        cast({{ dbt.last_day(dbt.dateadd('month', 1, 'last_active_end_date'), 'month') }} as date),
+        max(last_event_date) over ()
+    ) as spine_end_date,
+
+    {{ dbt.datediff('first_event_date', "cast('" ~ reporting_date ~ "' as date)", 'day') }} as user_tenure_days,
+
+    cast({{ dbt.date_trunc('month', 'first_event_date') }} as date) as cohort_month
 
 from base

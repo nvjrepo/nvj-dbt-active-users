@@ -3,12 +3,19 @@ with activities as (
     select
        user_id,
        event_date,
-       listagg(event_name, ', ') within group (order by event_name)  as event_names,
+       {{ dbt.listagg('event_name', "', '", 'order by event_name') }} as event_names,
        count(*) as number_of_events
 
     from {{ ref('stg_user_activities') }}
     {{ dbt_utils.group_by(2)}}
 
+),
+
+with_next_date as (
+    select
+        *,
+        lead(event_date) over (partition by user_id order by event_date) as next_date
+    from activities
 ),
 
 -- find out active period
@@ -19,16 +26,14 @@ windowed as (
             "event_date"
         ]) }} as user_event_date_id,
         *,
-        lead(event_date) over (partition by user_id order by event_date)  as next_date,
-        case when next_date is null then 0 else datediff(day, event_date, next_date) end as diff,
-        date(
+        case when next_date is null then 0 else {{ dbt.datediff('event_date', 'next_date', 'day') }} end as diff,
+        cast(
             case
-                when datediff(day, event_date, next_date) <= 28 then next_date
-                when next_date is null then dateadd(day, 28, event_date)
-                else dateadd(day, 28, event_date)
+                when {{ dbt.datediff('event_date', 'next_date', 'day') }} <= 28 then next_date
+                else {{ dbt.dateadd('day', 28, 'event_date') }}
             end
-        ) - 1 as active_end_date
-   from activities
+        as date) - 1 as active_end_date
+   from with_next_date
 )
 
 select
