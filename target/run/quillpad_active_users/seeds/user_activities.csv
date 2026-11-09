@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "active_users"."raw"."user_activities" ("event_date" date,"user_id" varchar,"event_name" varchar)
+  ;
+    -- dbt seed --
+    
+          COPY "active_users"."raw"."user_activities" FROM '/Users/nam.nguyen/Documents/0side_project/nvj-dbt-active-users/seeds/user_activities.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

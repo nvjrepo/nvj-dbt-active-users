@@ -3,4 +3,4 @@ select distinct
     user_id,
     event_date,
     event_name
-from read_csv('seeds/user_activities.csv', header=true, types=['DATE','VARCHAR','VARCHAR'])
+from "active_users"."raw"."user_activities"

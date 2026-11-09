@@ -2,7 +2,7 @@
     
 
     create  table
-      "quillpad"."dev"."fct_monthly_users__dbt_tmp"
+      "active_users"."main"."fct_monthly_users__dbt_tmp"
   
     
     as (
@@ -15,7 +15,7 @@
         sum(case when is_active then 1 else 0 end) > 0 as has_active_days,
         sum(case when not is_active then 1 else 0 end) > 0 as has_inactive_days,
         sum(number_of_events) as number_of_events
-    from "quillpad"."dev"."fct_daily_users"
+    from "active_users"."main"."fct_daily_users"
     group by 1,2
 ),
 

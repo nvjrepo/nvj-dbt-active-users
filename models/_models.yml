@@ -123,14 +123,8 @@ models:
           dimension:
             type: date
             label: Last Active End Date
-      - name: spine_end_date
-        description: Last day fct_daily_users covers for this user - end of the calendar month after last_active_end_date, capped at the last date in the data
-        meta:
-          dimension:
-            type: date
-            hidden: true
       - name: user_tenure_days
-        description: Number of days since the user's first event
+        description: Number of days from the user's first event to the reporting_end_date var
         meta:
           dimension:
             type: number
@@ -383,7 +377,7 @@ models:
             label: Year End Date
 
   - name: fct_daily_users
-    description: Fact table containing daily user records with activity status. Cross joins all users with all dates within their activity range and marks whether they were active on each day.
+    description: Fact table containing daily user records with activity status. Cross joins every user with every date from their first event to the reporting_end_date var (active or inactive), so churn, reactivation and inactive counts are tracked consistently, and marks whether they were active on each day.
     meta:
       joins:
         - join: dim_users
@@ -479,6 +473,12 @@ models:
               description: Count of distinct users having at least 1 active day in the month
               filters:
                 - has_active_days: 'true'
+            monthly_inactive_users:
+              type: count_distinct
+              label: Monthly Inactive Users
+              description: Count of distinct users having at least 1 inactive day in the month
+              filters:
+                - has_inactive_days: 'true'
       - name: active_days_count
         description: '{{ doc("active_days_count") }}'
         meta:
@@ -491,7 +491,10 @@ models:
             avg_active_days_per_user:
               type: average
               label: Avg Active Days per User
+              description: Average active days per active user (users with at least 1 active day in the month)
               format: '0.00'
+              filters:
+                - has_active_days: 'true'
       - name: inactive_days_count
         description: '{{ doc("inactive_days_count") }}'
         meta:
@@ -530,7 +533,10 @@ models:
             avg_events_per_user:
               type: average
               label: Avg Events per User
+              description: Average events per active user (users with at least 1 active day in the month)
               format: '0.00'
+              filters:
+                - has_active_days: 'true'
       - name: user_first_month
         description: The first month when the user had any active days
         meta:
@@ -579,8 +585,10 @@ models:
               type: average
               sql: "CASE WHEN (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) > 0 THEN CAST(${TABLE}.active_days_count AS DOUBLE) / (${TABLE}.active_days_count + ${TABLE}.inactive_days_count) ELSE 0 END"
               label: Avg Engagement Score
-              description: Average proportion of active days within the month across all users. Measures depth of engagement - higher scores indicate users are active on more days of the month.
+              description: Average proportion of active days within the month across active users (at least 1 active day). Measures depth of engagement - higher scores indicate users are active on more days of the month.
               format: '0.00%'
+              filters:
+                - has_active_days: 'true'
       - name: activity_frequency_bucket
         description: Categorisation of user activity level based on active days count
         meta:
@@ -640,14 +648,14 @@ models:
               type: sum
               label: Total Active Users in Cohort
       - name: total_cohort_users
-        description: Total number of users in this cohort
+        description: Total number of users in this cohort (from dim_users), whether or not they have rows in the analysis month. Used as the retention denominator.
         meta:
           metrics:
             total_cohort_size:
               type: sum
               label: Total Cohort Size
       - name: avg_active_days
-        description: Average number of active days for users in this cohort during the analysis month
+        description: Average number of active days for cohort users who were active in the analysis month
         meta:
           metrics:
             cohort_avg_active_days:
@@ -655,7 +663,7 @@ models:
               label: Cohort Avg Active Days
               format: '0.00'
       - name: avg_engagement_score
-        description: Average proportion of active days within the month for users in this cohort. Calculated as active_days / total_days_in_month. Higher values indicate the cohort is engaging more frequently throughout the month.
+        description: Average proportion of active days within the month for cohort users who were active in the analysis month. Calculated as active_days / total_days_in_month. Higher values indicate the cohort is engaging more frequently throughout the month.
         meta:
           metrics:
             cohort_avg_engagement:
@@ -664,7 +672,7 @@ models:
               description: Average engagement depth for this cohort - shows how consistently cohort members engage throughout the month
               format: '0.00%'
       - name: retention_rate
-        description: Percentage of cohort users who remained active in the analysis month
+        description: Percentage of cohort users who remained active in the analysis month - active_users / total_cohort_users (full cohort size)
         meta:
           dimension:
             type: number

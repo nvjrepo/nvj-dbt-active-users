@@ -22,6 +22,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+vars:
+  # Last day reported. fct_daily_users runs every user up to this date, and user tenure is measured to it.
+  # Events end on 2024-05-31; June shows users finishing their 28-day windows with no new June events.
+  reporting_end_date: '2024-06-30'
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -29,3 +34,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   quillpad_active_users:
     +materialized: table
+
+seeds:
+  quillpad_active_users:
+    +schema: raw
+    user_activities:
+      +column_types:
+        event_date: date
+        user_id: varchar
+        event_name: varchar

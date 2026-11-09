@@ -11,7 +11,7 @@ with activities as (
         ) as event_names,
        count(*) as number_of_events
 
-    from "quillpad"."dev"."stg_user_activities"
+    from "active_users"."main"."stg_user_activities"
     group by 1,2
 
 ),

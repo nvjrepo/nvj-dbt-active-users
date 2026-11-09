@@ -2,7 +2,7 @@
     
 
     create  table
-      "quillpad"."dev"."dim_dates__dbt_tmp"
+      "active_users"."main"."dim_dates__dbt_tmp"
   
     
     as (

@@ -2,7 +2,7 @@
     
 
     create  table
-      "quillpad"."dev"."fct_summary_monthly_cohort_performance__dbt_tmp"
+      "active_users"."main"."fct_summary_monthly_cohort_performance__dbt_tmp"
   
     
     as (
@@ -11,7 +11,7 @@ with cohort_sizes as (
     select
         cohort_month,
         count(*) as cohort_size
-    from "quillpad"."dev"."dim_users"
+    from "active_users"."main"."dim_users"
     group by 1
 ),
 
@@ -32,8 +32,8 @@ monthly as (
             end
         ) as avg_engagement_score
 
-    from "quillpad"."dev"."fct_monthly_users" as fm
-    inner join "quillpad"."dev"."dim_users" as du
+    from "active_users"."main"."fct_monthly_users" as fm
+    inner join "active_users"."main"."dim_users" as du
         on fm.user_id = du.user_id
     group by 1,2
 )

@@ -2,7 +2,7 @@
     
 
     create  table
-      "quillpad"."dev"."stg_user_activities__dbt_tmp"
+      "active_users"."main"."stg_user_activities__dbt_tmp"
   
     
     as (
@@ -11,7 +11,7 @@
     user_id,
     event_date,
     event_name
-from read_csv('seeds/user_activities.csv', header=true, types=['DATE','VARCHAR','VARCHAR'])
+from "active_users"."raw"."user_activities"
     );
     
   

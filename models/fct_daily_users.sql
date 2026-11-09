@@ -10,7 +10,7 @@ with dates as (
 
     from {{ ref('dim_dates') }} as dates
     cross join {{ ref('dim_users') }} as users
-    where dates.date_day between users.first_event_date and users.spine_end_date
+    where dates.date_day between users.first_event_date and cast('{{ var("reporting_end_date") }}' as date)
 )
 
 select

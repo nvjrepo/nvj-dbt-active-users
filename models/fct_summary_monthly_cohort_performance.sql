@@ -1,4 +1,3 @@
--- fixed denominator: every user in the cohort, whether or not they still have rows that month
 with cohort_sizes as (
     select
         cohort_month,
@@ -14,13 +13,12 @@ monthly as (
 
         count(distinct case when fm.has_active_days then fm.user_id end) as active_users,
 
-        -- Engagement metrics (users with rows in the month)
-        avg(fm.active_days_count) as avg_active_days,
+        -- Engagement metrics (active users only)
+        avg(case when fm.has_active_days then fm.active_days_count end) as avg_active_days,
         avg(
             case
-                when (fm.active_days_count + fm.inactive_days_count) > 0
+                when fm.has_active_days
                 then cast(fm.active_days_count as double) / (fm.active_days_count + fm.inactive_days_count)
-                else 0
             end
         ) as avg_engagement_score
 
@@ -43,7 +41,7 @@ select
     monthly.avg_active_days,
     monthly.avg_engagement_score,
 
-    -- Retention rate: active cohort users / full cohort size
+    -- Retention rate
     cast(monthly.active_users as double) / nullif(cohort_sizes.cohort_size, 0) as retention_rate
 
 from monthly

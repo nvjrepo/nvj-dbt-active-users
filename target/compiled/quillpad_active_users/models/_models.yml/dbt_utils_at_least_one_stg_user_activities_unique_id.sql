@@ -11,7 +11,7 @@ from (
     with pruned_rows as (
       select
         unique_id
-      from "quillpad"."dev"."stg_user_activities"
+      from "active_users"."main"."stg_user_activities"
       
         where unique_id is not null
         limit 1
