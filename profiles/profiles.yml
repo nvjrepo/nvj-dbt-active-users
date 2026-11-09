@@ -16,3 +16,7 @@ quillpad_active_users:
       # must match the schema set in the Lightdash project connection
       schema: main
       threads: 4
+      extensions:
+        - motherduck
+      settings:
+        motherduck_token: "{{ env_var('MOTHERDUCK_TOKEN') }}"

@@ -5578,3 +5578,187 @@ alter table "check"."dev"."fct_summary_monthly_cohort_performance__dbt_tmp" rena
 [0m12:45:55.391964 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.331403, "process_in_blocks": "0", "process_kernel_time": 0.270438, "process_mem_max_rss": "579485696", "process_out_blocks": "0", "process_user_time": 3.0477}
 [0m12:45:55.392169 [debug] [MainThread]: Command `dbt run` succeeded at 12:45:55.392131 after 1.33 seconds
 [0m12:45:55.392302 [debug] [MainThread]: Flushing usage events
+[0m18:10:23.721480 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:10:23.778182 | 87eef788-41c2-4001-8792-fb03f074f941 ==============================
+[0m18:10:23.778182 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:10:23.778680 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'log_path': 'logs', 'log_cache_events': 'False', 'printer_width': '80', 'target_path': 'None', 'partial_parse': 'True', 'version_check': 'True', 'introspect': 'True', 'fail_fast': 'False', 'log_format': 'default', 'static_parser': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'invocation_command': 'dbt ls --project-dir . --profiles-dir profiles --output json --output-keys unique_id --quiet', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'quiet': 'True', 'hints_enabled': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'no_print': 'None', 'profiles_dir': 'profiles'}
+[0m18:10:23.895645 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m18:10:23.946351 [debug] [MainThread]: checksum: 7eb8ce4dd2aae3c08fbbb66bf0758d39592e0e936dae976f14711ffb639c23fb, vars: {}, profile: quillpad_active_users, target: dev, version: 1.12.6
+[0m18:10:24.006568 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m18:10:24.006788 [debug] [MainThread]: previous checksum: 7eb8ce4dd2aae3c08fbbb66bf0758d39592e0e936dae976f14711ffb639c23fb, current checksum: 4a89d7868a207bb43dd4733c352e670a38a5dcf969ff5d323423ca765669b603
+[0m18:10:24.006941 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:10:24.866952 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.unique_combination_of_columns`
+defined on 'source_user_activities' in package 'quillpad_active_users'
+(models/_sources.yml). Arguments to generic tests should be nested under the
+`arguments` property.
+[0m18:10:24.975122 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m18:10:24.976535 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m18:10:24.987075 [debug] [MainThread]: Wrote artifact OsiDocument to ./target/osi_document.json
+[0m18:10:24.996955 [info ] [MainThread]: Found 7 models, 3 analyses, 1 seed, 22 data tests, 1 source, 769 macros
+[0m18:10:24.997442 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_dates"}
+[0m18:10:24.997606 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_users"}
+[0m18:10:24.997733 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_daily_users"}
+[0m18:10:24.997866 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_monthly_users"}
+[0m18:10:24.997986 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"}
+[0m18:10:24.998118 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"}
+[0m18:10:24.998234 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.stg_user_activities"}
+[0m18:10:24.998341 [info ] [MainThread]: {"unique_id": "seed.quillpad_active_users.user_activities"}
+[0m18:10:24.998454 [info ] [MainThread]: {"unique_id": "source.quillpad_active_users.source.user_activities"}
+[0m18:10:24.998563 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f"}
+[0m18:10:24.998666 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7"}
+[0m18:10:24.998769 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b"}
+[0m18:10:24.998870 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c"}
+[0m18:10:24.998974 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc"}
+[0m18:10:24.999079 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589"}
+[0m18:10:24.999184 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7"}
+[0m18:10:24.999285 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69"}
+[0m18:10:24.999386 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb"}
+[0m18:10:24.999482 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812"}
+[0m18:10:24.999584 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2"}
+[0m18:10:24.999685 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96"}
+[0m18:10:24.999782 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22"}
+[0m18:10:24.999881 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029"}
+[0m18:10:24.999978 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596"}
+[0m18:10:25.000077 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7"}
+[0m18:10:25.000176 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9"}
+[0m18:10:25.000272 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274"}
+[0m18:10:25.000371 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd"}
+[0m18:10:25.000469 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d"}
+[0m18:10:25.000566 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2"}
+[0m18:10:25.000663 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57"}
+[0m18:10:25.000853 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:10:25.028742 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.3396754, "process_in_blocks": "0", "process_kernel_time": 0.156669, "process_mem_max_rss": "164675584", "process_out_blocks": "0", "process_user_time": 1.660761}
+[0m18:10:25.028987 [debug] [MainThread]: Command `dbt ls` succeeded at 18:10:25.028947 after 1.34 seconds
+[0m18:10:25.029156 [debug] [MainThread]: Flushing usage events
+[0m18:10:56.996825 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:10:57.009856 | adbe0d97-ea90-4b2a-bb58-c5cab2f752bd ==============================
+[0m18:10:57.009856 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:10:57.010257 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'debug': 'False', 'introspect': 'True', 'target_path': 'None', 'use_colors': 'True', 'log_format': 'default', 'hints_enabled': 'True', 'no_print': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'maximum_seed_size_mib': '1', 'version_check': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'empty': 'None', 'cache_selected_only': 'False', 'quiet': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'invocation_command': 'dbt ls --project-dir . --profiles-dir profiles --output json --output-keys unique_id --quiet', 'indirect_selection': 'eager', 'profiles_dir': 'profiles'}
+[0m18:10:57.116659 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m18:10:57.164952 [debug] [MainThread]: checksum: 4a89d7868a207bb43dd4733c352e670a38a5dcf969ff5d323423ca765669b603, vars: {}, profile: quillpad_active_users, target: prod, version: 1.12.6
+[0m18:10:57.223377 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m18:10:57.223580 [debug] [MainThread]: previous checksum: 4a89d7868a207bb43dd4733c352e670a38a5dcf969ff5d323423ca765669b603, current checksum: 7eb8ce4dd2aae3c08fbbb66bf0758d39592e0e936dae976f14711ffb639c23fb
+[0m18:10:57.223694 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:10:58.048136 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.unique_combination_of_columns`
+defined on 'source_user_activities' in package 'quillpad_active_users'
+(models/_sources.yml). Arguments to generic tests should be nested under the
+`arguments` property.
+[0m18:10:58.155092 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m18:10:58.156030 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m18:10:58.161145 [debug] [MainThread]: Wrote artifact OsiDocument to ./target/osi_document.json
+[0m18:10:58.167255 [info ] [MainThread]: Found 7 models, 3 analyses, 1 seed, 22 data tests, 1 source, 769 macros
+[0m18:10:58.167744 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_dates"}
+[0m18:10:58.167912 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_users"}
+[0m18:10:58.168034 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_daily_users"}
+[0m18:10:58.168164 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_monthly_users"}
+[0m18:10:58.168291 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"}
+[0m18:10:58.168408 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"}
+[0m18:10:58.168518 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.stg_user_activities"}
+[0m18:10:58.168622 [info ] [MainThread]: {"unique_id": "seed.quillpad_active_users.user_activities"}
+[0m18:10:58.168725 [info ] [MainThread]: {"unique_id": "source.quillpad_active_users.source.user_activities"}
+[0m18:10:58.168826 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f"}
+[0m18:10:58.168931 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7"}
+[0m18:10:58.169034 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b"}
+[0m18:10:58.169132 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c"}
+[0m18:10:58.169232 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc"}
+[0m18:10:58.169330 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589"}
+[0m18:10:58.169431 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7"}
+[0m18:10:58.169529 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69"}
+[0m18:10:58.169639 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb"}
+[0m18:10:58.169734 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812"}
+[0m18:10:58.169834 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2"}
+[0m18:10:58.169929 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96"}
+[0m18:10:58.170026 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22"}
+[0m18:10:58.170125 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029"}
+[0m18:10:58.170225 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596"}
+[0m18:10:58.170320 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7"}
+[0m18:10:58.170418 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9"}
+[0m18:10:58.170514 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274"}
+[0m18:10:58.170611 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd"}
+[0m18:10:58.170713 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d"}
+[0m18:10:58.170810 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2"}
+[0m18:10:58.170907 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57"}
+[0m18:10:58.171092 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:10:58.172208 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.2003716, "process_in_blocks": "0", "process_kernel_time": 0.127988, "process_mem_max_rss": "164331520", "process_out_blocks": "0", "process_user_time": 1.614331}
+[0m18:10:58.172375 [debug] [MainThread]: Command `dbt ls` succeeded at 18:10:58.172346 after 1.20 seconds
+[0m18:10:58.172509 [debug] [MainThread]: Flushing usage events
+[0m18:12:07.901159 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 18:12:07.936655 | 8f588dc4-fdff-41bf-a28d-930d9d3dfa4f ==============================
+[0m18:12:07.936655 [info ] [MainThread]: Running with dbt=1.12.6
+[0m18:12:07.937145 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'empty': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'use_colors': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'printer_width': '80', 'profiles_dir': 'profiles', 'write_json': 'True', 'warn_error': 'None', 'target_path': 'None', 'debug': 'False', 'quiet': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt ls --project-dir . --profiles-dir profiles --output json --output-keys unique_id --quiet', 'static_parser': 'True', 'introspect': 'True', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'indirect_selection': 'eager'}
+[0m18:12:08.057348 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m18:12:08.111482 [debug] [MainThread]: checksum: 4a89d7868a207bb43dd4733c352e670a38a5dcf969ff5d323423ca765669b603, vars: {}, profile: quillpad_active_users, target: prod, version: 1.12.6
+[0m18:12:08.172108 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m18:12:09.071456 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `dbt_utils.unique_combination_of_columns`
+defined on 'source_user_activities' in package 'quillpad_active_users'
+(models/_sources.yml). Arguments to generic tests should be nested under the
+`arguments` property.
+[0m18:12:09.191134 [debug] [MainThread]: Wrote artifact WritableManifest to ./target/manifest.json
+[0m18:12:09.192383 [debug] [MainThread]: Wrote artifact SemanticManifest to ./target/semantic_manifest.json
+[0m18:12:09.203071 [debug] [MainThread]: Wrote artifact OsiDocument to ./target/osi_document.json
+[0m18:12:09.215235 [info ] [MainThread]: Found 7 models, 3 analyses, 1 seed, 22 data tests, 1 source, 769 macros
+[0m18:12:09.215864 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_dates"}
+[0m18:12:09.216061 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.dim_users"}
+[0m18:12:09.216195 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_daily_users"}
+[0m18:12:09.216333 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_monthly_users"}
+[0m18:12:09.216458 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_summary_monthly_cohort_performance"}
+[0m18:12:09.216584 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.fct_users_activities_date_aggregated"}
+[0m18:12:09.216703 [info ] [MainThread]: {"unique_id": "model.quillpad_active_users.stg_user_activities"}
+[0m18:12:09.216814 [info ] [MainThread]: {"unique_id": "seed.quillpad_active_users.user_activities"}
+[0m18:12:09.216935 [info ] [MainThread]: {"unique_id": "source.quillpad_active_users.source.user_activities"}
+[0m18:12:09.217048 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_dates_date_day.cd16e0ca0f"}
+[0m18:12:09.217159 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_dim_users_user_id.688be3a1d7"}
+[0m18:12:09.217266 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_daily_users_daily_user_id.57a486be4b"}
+[0m18:12:09.217375 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_monthly_users_monthly_user_id.b1a435104c"}
+[0m18:12:09.217479 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_summary_monthly_cohort_performance_cohort_performance_id.0480b3c5bc"}
+[0m18:12:09.217583 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_fct_users_activities_date_aggregated_user_event_date_id.617364f589"}
+[0m18:12:09.217690 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_at_least_one_stg_user_activities_unique_id.739fb9c8e7"}
+[0m18:12:09.217793 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.dbt_utils_source_unique_combination_of_columns_source_user_activities_user_id__event_date__event_name.b98799ec69"}
+[0m18:12:09.217895 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_dates_date_day.1717af99fb"}
+[0m18:12:09.217998 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_dim_users_user_id.e754bb5812"}
+[0m18:12:09.218101 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_daily_users_daily_user_id.975f4a1da2"}
+[0m18:12:09.218203 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_monthly_users_monthly_user_id.6370b8db96"}
+[0m18:12:09.218305 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_summary_monthly_cohort_performance_cohort_performance_id.94721e9f22"}
+[0m18:12:09.218408 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_fct_users_activities_date_aggregated_user_event_date_id.bafc6df029"}
+[0m18:12:09.218513 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.not_null_stg_user_activities_unique_id.2e4988c596"}
+[0m18:12:09.218732 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_dates_date_day.5e9dfa95c7"}
+[0m18:12:09.218864 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_dim_users_user_id.bcdc17b9f9"}
+[0m18:12:09.218980 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_daily_users_daily_user_id.569a0a2274"}
+[0m18:12:09.219090 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_monthly_users_monthly_user_id.ffce05dbbd"}
+[0m18:12:09.219200 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_summary_monthly_cohort_performance_cohort_performance_id.b7569e858d"}
+[0m18:12:09.219305 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_fct_users_activities_date_aggregated_user_event_date_id.19efd356c2"}
+[0m18:12:09.219411 [info ] [MainThread]: {"unique_id": "test.quillpad_active_users.unique_stg_user_activities_unique_id.3a2977da57"}
+[0m18:12:09.219635 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:12:09.221497 [debug] [MainThread]: Resource report: {"command_name": "list", "command_success": true, "command_wall_clock_time": 1.3581424, "process_in_blocks": "0", "process_kernel_time": 0.192628, "process_mem_max_rss": "164495360", "process_out_blocks": "0", "process_user_time": 1.858135}
+[0m18:12:09.221710 [debug] [MainThread]: Command `dbt ls` succeeded at 18:12:09.221674 after 1.36 seconds
+[0m18:12:09.221862 [debug] [MainThread]: Flushing usage events
