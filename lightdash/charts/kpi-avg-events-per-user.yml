@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    label: Avg events
+    selectedField: fct_monthly_users_avg_events_per_user
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: Per active user per month
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 08c1d449-29df-44d6-beab-531a2f47916f
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: be605724-6862-40fd-b467-610c906a211b
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_avg_events_per_user
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: KPI - Avg events
+slug: kpi-avg-events-per-user
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_avg_events_per_user
+tableName: fct_monthly_users
+verification: null
+version: 1

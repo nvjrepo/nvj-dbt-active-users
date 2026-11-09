@@ -1,0 +1,199 @@
+config:
+  isAddFilterDisabled: false
+  isDateZoomDisabled: false
+  pinnedParameters: []
+contentType: dashboard
+description: Recreated from the v2 Insights & Recommendations charts (Nov 2023 - May 2024)
+filters:
+  dimensions: []
+  metrics: []
+  tableCalculations: []
+name: Active Users Overview
+ownerEmail: nvjrepo@gmail.com
+parameters: {}
+slug: active-users-overview
+spaceSlug: shared
+tabs: []
+tiles:
+  - h: 1
+    properties:
+      showDivider: false
+      text: 1. Summary of activity
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 0
+  - h: 3
+    properties:
+      chartName: KPI - Total users
+      chartSlug: kpi-total-users
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-total-users
+    type: saved_chart
+    w: 6
+    x: 0
+    "y": 1
+  - h: 3
+    properties:
+      chartName: KPI - Total events
+      chartSlug: kpi-total-events
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-total-events
+    type: saved_chart
+    w: 6
+    x: 6
+    "y": 1
+  - h: 3
+    properties:
+      chartName: KPI - Peak MAU
+      chartSlug: kpi-total-active-days
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-total-active-days
+    type: saved_chart
+    w: 6
+    x: 12
+    "y": 1
+  - h: 3
+    properties:
+      chartName: KPI - Avg engagement
+      chartSlug: kpi-avg-engagement-score
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-avg-engagement-score
+    type: saved_chart
+    w: 6
+    x: 18
+    "y": 1
+  - h: 3
+    properties:
+      chartName: KPI - Avg events
+      chartSlug: kpi-avg-events-per-user
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-avg-events-per-user
+    type: saved_chart
+    w: 6
+    x: 24
+    "y": 1
+  - h: 3
+    properties:
+      chartName: KPI - Avg active days
+      chartSlug: kpi-avg-active-days-per-user
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: kpi-avg-active-days-per-user
+    type: saved_chart
+    w: 6
+    x: 30
+    "y": 1
+  - h: 1
+    properties:
+      showDivider: false
+      text: 2. MAU and DAU over time
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 4
+  - h: 9
+    properties:
+      chartName: MAU kept growing, but more slowly
+      chartSlug: monthly-active-inactive-users
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: monthly-active-inactive-users
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 5
+  - h: 9
+    properties:
+      chartName: DAU climbs steadily; inactive users grow as churners accumulate
+      chartSlug: dau-vs-daily-inactive-users-2024
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: dau-vs-daily-inactive-users-2024
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 5
+  - h: 1
+    properties:
+      showDivider: false
+      text: 3-4. Engagement depth and MAU bridge
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 14
+  - h: 9
+    properties:
+      chartName: Engagement depth is stable at ~22 active days
+      chartSlug: how-do-average-active-and-inactive-days-per-user-compare-across-months
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: how-do-average-active-and-inactive-days-per-user-compare-across-months
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 15
+  - h: 9
+    properties:
+      chartName: Retained users now drive MAU; churn is the growing drag
+      chartSlug: how-does-user-composition-by-transition-type-change-month-over-month
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: how-does-user-composition-by-transition-type-change-month-over-month
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 15
+  - h: 1
+    properties:
+      showDivider: false
+      text: 5-6. Activity frequency and cohort retention
+    tabSlug: null
+    type: heading
+    w: 36
+    x: 0
+    "y": 24
+  - h: 9
+    properties:
+      chartName: Half of active user-months are power users (26+ active days)
+      chartSlug: users-by-activity-frequency-levels
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: users-by-activity-frequency-levels
+    type: saved_chart
+    w: 16
+    x: 0
+    "y": 25
+  - h: 9
+    properties:
+      chartName: Nov 23 cohort retains far better than every later cohort
+      chartSlug: nov-23-cohort-retains-far-better-than-every-later-cohort
+      hideTitle: false
+      title: ""
+    tabSlug: null
+    tileSlug: nov-23-cohort-retains-far-better-than-every-later-cohort
+    type: saved_chart
+    w: 20
+    x: 16
+    "y": 25
+verification: null
+version: 1

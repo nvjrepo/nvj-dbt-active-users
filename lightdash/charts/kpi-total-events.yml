@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    label: Total events
+    selectedField: fct_monthly_users_total_events
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: De-duplicated events
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 084b6e3b-4421-4a90-a5f7-e6516d27b382
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: f40d41cf-4fda-4d66-a2b4-8d6bb723ab8b
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_total_events
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: KPI - Total events
+slug: kpi-total-events
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_total_events
+tableName: fct_monthly_users
+verification: null
+version: 1

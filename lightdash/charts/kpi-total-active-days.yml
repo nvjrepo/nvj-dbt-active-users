@@ -1,0 +1,44 @@
+chartConfig:
+  config:
+    label: Peak MAU
+    selectedField: fct_monthly_users_monthly_active_users
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: Highest monthly MAU (May 2024)
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - fct_monthly_users_date_month_month
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 72a6467a-b944-4935-b190-bfa5f368fdbd
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: a9e1a17e-acc1-4954-a4c4-d0907bda7061
+  limit: 1
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_monthly_active_users
+  sorts:
+    - descending: true
+      fieldId: fct_monthly_users_monthly_active_users
+  tableCalculations: []
+  timezone: project_timezone
+name: KPI - Peak MAU
+slug: kpi-total-active-days
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_date_month_month
+    - fct_monthly_users_monthly_active_users
+tableName: fct_monthly_users
+verification: null
+version: 1

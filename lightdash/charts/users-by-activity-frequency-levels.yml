@@ -1,0 +1,98 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - color: "#2979D6"
+          encode:
+            xRef:
+              field: fct_monthly_users_activity_frequency_bucket
+            yRef:
+              field: fct_monthly_users_active_user_months
+          label:
+            position: right
+            show: true
+          name: Active user-months
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - {}
+      yAxis:
+        - {}
+    layout:
+      flipAxes: true
+      xField: fct_monthly_users_activity_frequency_bucket
+      yField:
+        - fct_monthly_users_active_user_months
+  type: cartesian
+contentType: chart
+description: Active user-months Nov 23 - May 24, by active days in the month
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: monthly_user_id
+      filters:
+        - id: 283b8094-6516-4386-9c2b-e3cb7c88d4c7
+          operator: equals
+          target:
+            fieldRef: has_active_days
+          values:
+            - true
+      label: Active user-months
+      name: active_user_months
+      sql: ${TABLE}.monthly_user_id
+      table: fct_monthly_users
+      type: count_distinct
+  customDimensions: []
+  dimensions:
+    - fct_monthly_users_activity_frequency_bucket
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 507a3129-687f-429c-b6f2-ccecc8a41a51
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+        - id: 9397152b-ae0e-4138-a709-50b58ff077ab
+          operator: notEquals
+          target:
+            fieldId: fct_monthly_users_activity_frequency_bucket
+          values:
+            - Inactive
+      id: 64c21059-4643-4f35-bb50-7cc61f430beb
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_active_user_months
+  sorts:
+    - descending: false
+      fieldId: fct_monthly_users_active_user_months
+  tableCalculations:
+    - displayName: "% of active user-months"
+      format:
+        round: 0
+        type: percent
+      name: pct_of_user_months
+      template:
+        fieldId: fct_monthly_users_active_user_months
+        type: percent_of_column_total
+      type: number
+  timezone: project_timezone
+name: Half of active user-months are power users (26+ active days)
+slug: users-by-activity-frequency-levels
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_activity_frequency_bucket
+    - fct_monthly_users_active_user_months
+    - pct_of_user_months
+tableName: fct_monthly_users
+verification: null
+version: 1

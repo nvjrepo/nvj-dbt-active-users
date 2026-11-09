@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "charts": {
+    "users-by-activity-frequency-levels": "2026-11-09T09:54:05.169Z",
+    "monthly-active-inactive-users": "2026-11-09T09:54:05.169Z",
+    "kpi-avg-active-days-per-user": "2026-11-09T09:54:05.169Z",
+    "kpi-total-users": "2026-11-09T09:54:05.169Z",
+    "nov-23-cohort-retains-far-better-than-every-later-cohort": "2026-11-09T09:54:05.169Z",
+    "kpi-avg-engagement-score": "2026-11-09T09:54:05.169Z",
+    "kpi-total-events": "2026-11-09T09:54:05.169Z",
+    "dau-vs-daily-inactive-users-2024": "2026-11-09T09:54:05.169Z",
+    "kpi-avg-events-per-user": "2026-11-09T09:54:05.169Z",
+    "how-do-average-active-and-inactive-days-per-user-compare-across-months": "2026-11-09T09:54:05.169Z",
+    "how-does-user-composition-by-transition-type-change-month-over-month": "2026-11-09T09:54:05.169Z",
+    "kpi-total-active-days": "2026-11-09T09:54:05.169Z"
+  },
+  "dashboards": {
+    "active-users-overview": "2026-11-09T09:54:05.222Z"
+  }
+}

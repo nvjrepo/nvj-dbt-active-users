@@ -1,0 +1,120 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - color: "#2979D6"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_monthly_active_users
+          label:
+            position: inside
+            show: true
+          name: Monthly active users (MAU)
+          stack: users
+          type: bar
+          yAxisIndex: 0
+        - color: "#C2C2B6"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: acquired_not_active
+          name: Acquired, not active this month
+          stack: users
+          stackLabel:
+            show: true
+          type: bar
+          yAxisIndex: 0
+        - color: "#EC6A37"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: mau_mom_growth
+          label:
+            position: top
+            show: true
+          name: MAU MoM growth
+          type: line
+          yAxisIndex: 1
+      xAxis:
+        - {}
+      yAxis:
+        - name: Users
+        - name: MAU MoM growth
+    layout:
+      xField: fct_monthly_users_date_month_month
+      yField:
+        - fct_monthly_users_monthly_active_users
+        - acquired_not_active
+        - mau_mom_growth
+  type: cartesian
+contentType: chart
+description: Bar height = all users acquired to date; line = MAU month-over-month growth
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - fct_monthly_users_date_month_month
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 9ab234bf-9953-4e8f-bbd0-d01a5ae5b4d2
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: 7e369e16-aab2-4478-ae52-080dc79744e6
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_monthly_active_users
+    - fct_monthly_users_total_users
+  sorts:
+    - descending: false
+      fieldId: fct_monthly_users_date_month_month
+  tableCalculations:
+    - displayName: Acquired, not active this month
+      format:
+        type: default
+      name: acquired_not_active
+      sql: >-
+        ${fct_monthly_users.total_users} -
+        ${fct_monthly_users.monthly_active_users}
+      type: number
+    - displayName: MAU month-over-month growth
+      format:
+        round: 0
+        type: percent
+      name: mau_mom_growth
+      template:
+        fieldId: fct_monthly_users_monthly_active_users
+        orderBy:
+          - fieldId: fct_monthly_users_date_month_month
+            order: asc
+        type: percent_change_from_previous
+      type: number
+  timezone: project_timezone
+name: MAU kept growing, but more slowly
+slug: monthly-active-inactive-users
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_date_month_month
+    - fct_monthly_users_monthly_active_users
+    - acquired_not_active
+    - mau_mom_growth
+    - fct_monthly_users_total_users
+tableName: fct_monthly_users
+verification: null
+version: 1

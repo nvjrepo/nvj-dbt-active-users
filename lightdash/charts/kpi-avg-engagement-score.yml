@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    label: Avg engagement
+    selectedField: fct_monthly_users_avg_engagement_score
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: Active days / tracked days, per active user
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 32ebfbee-6260-45f5-98d1-6526443d2bba
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: f8bbba6f-74ef-430a-9bdc-b51d6a4af908
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_avg_engagement_score
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: KPI - Avg engagement
+slug: kpi-avg-engagement-score
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_avg_engagement_score
+tableName: fct_monthly_users
+verification: null
+version: 1

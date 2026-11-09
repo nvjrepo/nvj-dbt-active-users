@@ -1,0 +1,178 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - color: "#2979D6"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_retained_users_tt
+          label:
+            position: bottom
+            show: false
+          name: Retained
+          stack: bridge
+          type: bar
+          yAxisIndex: 0
+        - color: "#EC6A37"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_new_users_tt
+          label:
+            position: bottom
+            show: false
+          name: New
+          stack: bridge
+          type: bar
+          yAxisIndex: 0
+        - color: "#1FB07A"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_reactivated_users_tt
+          label:
+            position: bottom
+            show: false
+          name: Reactivated
+          stack: bridge
+          type: bar
+          yAxisIndex: 0
+        - color: "#EEA200"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: churned_negative
+          label:
+            position: bottom
+            show: true
+          name: Churned
+          stack: bridge
+          type: bar
+          yAxisIndex: 0
+      xAxis:
+        - {}
+      yAxis:
+        - {}
+    layout:
+      xField: fct_monthly_users_date_month_month
+      yField:
+        - fct_monthly_users_retained_users_tt
+        - fct_monthly_users_new_users_tt
+        - fct_monthly_users_reactivated_users_tt
+        - churned_negative
+  type: cartesian
+contentType: chart
+description: >-
+  Above zero: MAU = Retained + New + Reactivated. Below zero: users churned that
+  month
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: user_id
+      filters:
+        - id: 1d7bab43-f178-45e6-9460-b5ff1f3d73d3
+          operator: equals
+          target:
+            fieldRef: transition_type
+          values:
+            - Retained
+      label: Retained users
+      name: retained_users_tt
+      sql: ${TABLE}.user_id
+      table: fct_monthly_users
+      type: count_distinct
+    - baseDimensionName: user_id
+      filters:
+        - id: 9494bd0d-ef20-4f7a-bcab-0546d8972da6
+          operator: equals
+          target:
+            fieldRef: transition_type
+          values:
+            - New
+      label: New users
+      name: new_users_tt
+      sql: ${TABLE}.user_id
+      table: fct_monthly_users
+      type: count_distinct
+    - baseDimensionName: user_id
+      filters:
+        - id: d2b0a292-b3d3-4dd5-b58a-d6bffea7d623
+          operator: equals
+          target:
+            fieldRef: transition_type
+          values:
+            - Reactivated
+      label: Reactivated users
+      name: reactivated_users_tt
+      sql: ${TABLE}.user_id
+      table: fct_monthly_users
+      type: count_distinct
+    - baseDimensionName: user_id
+      filters:
+        - id: 87dce2b0-f021-48f2-8363-d0896dc25310
+          operator: equals
+          target:
+            fieldRef: transition_type
+          values:
+            - Churned
+      label: Churned users
+      name: churned_users_tt
+      sql: ${TABLE}.user_id
+      table: fct_monthly_users
+      type: count_distinct
+  customDimensions: []
+  dimensions:
+    - fct_monthly_users_date_month_month
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: b55da014-f29f-4331-89c8-2e996f2bd69c
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: 629374bf-f897-4323-9b26-f0aaa646d5c2
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_retained_users_tt
+    - fct_monthly_users_new_users_tt
+    - fct_monthly_users_reactivated_users_tt
+    - fct_monthly_users_churned_users_tt
+  sorts:
+    - descending: false
+      fieldId: fct_monthly_users_date_month_month
+  tableCalculations:
+    - displayName: Churned
+      format:
+        type: default
+      name: churned_negative
+      sql: 0 - ${fct_monthly_users.churned_users_tt}
+      type: number
+  timezone: project_timezone
+name: Retained users now drive MAU; churn is the growing drag
+slug: how-does-user-composition-by-transition-type-change-month-over-month
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_date_month_month
+    - fct_monthly_users_retained_users_tt
+    - fct_monthly_users_new_users_tt
+    - fct_monthly_users_reactivated_users_tt
+    - churned_negative
+    - fct_monthly_users_churned_users_tt
+tableName: fct_monthly_users
+verification: null
+version: 1

@@ -1,0 +1,40 @@
+chartConfig:
+  config:
+    label: Total users
+    selectedField: fct_monthly_users_total_users
+    showBigNumberLabel: true
+  type: big_number
+contentType: chart
+description: Nov 23 - May 24
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions: []
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: 7d467e50-72e7-4612-97a0-baae116657b0
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: 7e5a9701-40eb-4ae5-8b2f-5167d290d931
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_total_users
+  sorts: []
+  tableCalculations: []
+  timezone: project_timezone
+name: KPI - Total users
+slug: kpi-total-users
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_total_users
+tableName: fct_monthly_users
+verification: null
+version: 1

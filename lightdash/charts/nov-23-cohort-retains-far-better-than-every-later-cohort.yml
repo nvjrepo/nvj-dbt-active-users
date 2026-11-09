@@ -1,0 +1,70 @@
+chartConfig:
+  config:
+    columns:
+      fct_summary_monthly_cohort_performance_avg_retention_rate:
+        name: Retention
+      fct_summary_monthly_cohort_performance_cohort_month_month:
+        name: Cohort
+      fct_summary_monthly_cohort_performance_months_since_cohort:
+        name: Months since first event
+    conditionalFormattings:
+      - applyTo: cell
+        color:
+          end: "#0D3366"
+          start: "#DCEBFB"
+        rule:
+          max: 1
+          min: 0.4
+        target:
+          fieldId: fct_summary_monthly_cohort_performance_avg_retention_rate
+    hideRowNumbers: true
+    showColumnCalculation: false
+    showTableNames: false
+  type: table
+contentType: chart
+description: >-
+  Retention = active cohort users / full cohort size, by months since first
+  event
+metricQuery:
+  additionalMetrics: []
+  customDimensions: []
+  dimensions:
+    - fct_summary_monthly_cohort_performance_cohort_month_month
+    - fct_summary_monthly_cohort_performance_months_since_cohort
+  exploreName: fct_summary_monthly_cohort_performance
+  filters:
+    dimensions:
+      and:
+        - id: f257eb0d-6672-40c8-b110-f3b8545fa459
+          operator: inBetween
+          target:
+            fieldId: fct_summary_monthly_cohort_performance_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: 84f8b236-e661-47a3-827a-34c775d1bbca
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_summary_monthly_cohort_performance_avg_retention_rate
+  sorts:
+    - descending: false
+      fieldId: fct_summary_monthly_cohort_performance_cohort_month_month
+    - descending: false
+      fieldId: fct_summary_monthly_cohort_performance_months_since_cohort
+  tableCalculations: []
+  timezone: project_timezone
+name: Nov 23 cohort retains far better than every later cohort
+pivotConfig:
+  columns:
+    - fct_summary_monthly_cohort_performance_months_since_cohort
+slug: nov-23-cohort-retains-far-better-than-every-later-cohort
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_summary_monthly_cohort_performance_cohort_month_month
+    - fct_summary_monthly_cohort_performance_months_since_cohort
+    - fct_summary_monthly_cohort_performance_avg_retention_rate
+tableName: fct_summary_monthly_cohort_performance
+verification: null
+version: 1

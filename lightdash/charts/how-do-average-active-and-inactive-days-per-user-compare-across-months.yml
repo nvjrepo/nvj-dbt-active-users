@@ -1,0 +1,99 @@
+chartConfig:
+  config:
+    eChartsConfig:
+      grid:
+        containLabel: true
+      legend:
+        show: true
+        type: scroll
+      series:
+        - color: "#2979D6"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_avg_active_days_per_user
+          label:
+            position: top
+            show: true
+          name: Avg active days
+          showSymbol: true
+          type: line
+          yAxisIndex: 0
+        - color: "#EC6A37"
+          encode:
+            xRef:
+              field: fct_monthly_users_date_month_month
+            yRef:
+              field: fct_monthly_users_avg_inactive_days_active_users
+          label:
+            position: top
+            show: true
+          name: Avg inactive days
+          showSymbol: true
+          type: line
+          yAxisIndex: 0
+      xAxis:
+        - {}
+      yAxis:
+        - {}
+    layout:
+      xField: fct_monthly_users_date_month_month
+      yField:
+        - fct_monthly_users_avg_active_days_per_user
+        - fct_monthly_users_avg_inactive_days_active_users
+  type: cartesian
+contentType: chart
+description: Per active user (at least 1 active day in the month)
+metricQuery:
+  additionalMetrics:
+    - baseDimensionName: inactive_days_count
+      filters:
+        - id: 7fe4c1da-21e8-4c28-b329-120f7130f254
+          operator: equals
+          target:
+            fieldRef: has_active_days
+          values:
+            - true
+      label: Avg inactive days (active users)
+      name: avg_inactive_days_active_users
+      round: 1
+      sql: ${TABLE}.inactive_days_count
+      table: fct_monthly_users
+      type: average
+  customDimensions: []
+  dimensions:
+    - fct_monthly_users_date_month_month
+  exploreName: fct_monthly_users
+  filters:
+    dimensions:
+      and:
+        - id: aefeabef-f375-4a55-81f8-1322ace61853
+          operator: inBetween
+          target:
+            fieldId: fct_monthly_users_date_month_month
+          values:
+            - "2023-11-01"
+            - "2024-05-31"
+      id: 30878cc3-6d50-4d0d-8141-a95aa2ceca3d
+  limit: 500
+  metricOverrides: {}
+  metrics:
+    - fct_monthly_users_avg_active_days_per_user
+    - fct_monthly_users_avg_inactive_days_active_users
+  sorts:
+    - descending: false
+      fieldId: fct_monthly_users_date_month_month
+  tableCalculations: []
+  timezone: project_timezone
+name: Engagement depth is stable at ~22 active days
+slug: how-do-average-active-and-inactive-days-per-user-compare-across-months
+spaceSlug: shared
+tableConfig:
+  columnOrder:
+    - fct_monthly_users_date_month_month
+    - fct_monthly_users_avg_active_days_per_user
+    - fct_monthly_users_avg_inactive_days_active_users
+tableName: fct_monthly_users
+verification: null
+version: 1
